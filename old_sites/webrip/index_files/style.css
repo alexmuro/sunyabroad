@@ -1,0 +1,165 @@
+<!--
+
+/* 
+© 2008 - Design, CSS Style by P&B Creations, pbcreations.sk
+© 2008 - Martin Plakinger (CEO)
+*/
+
+body {
+	color: #000000;
+	font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	margin:0 auto;
+	background-image: url(images/bg_2_1.gif);
+	background-color:#e4e4e4;
+}
+
+a, a:visited, a:link { color:#000000; text-decoration:underline; }
+
+a:hover { color: #666666; }
+
+h1 { font-size:18px; margin:0; color:#333333; border-bottom: 1px dashed #333333; }
+
+h2 { font-size:12px; margin:0; color:#333333; border-bottom: 1px dashed #333333; border-top:1px dotted #333333; }
+
+h1 a, h1 a:visited, h1 a:link { text-decoration:none; }
+
+h2 a, h2 a:visited, h2 a:link { text-decoration:none; padding:10px; line-height:25px; }
+
+h2 img { margin-right:5px; border:0; }
+
+input {
+	background-color: #fff;
+	background-image:url("SAE BOUND/img/input.gif");
+	background-repeat: repeat-x;
+	border:1px solid #abb5c3;
+	width:140px;
+	padding:3px;
+	margin-top:18px;
+}
+
+div.wrap1 {
+	width: 856px;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 1px solid #c3c3c3;
+	background-color: #e4e4e4;
+}
+
+div.wrap1 .wrap2 {
+	width: 856px;
+	background-repeat:repeat-y;
+	border: 1px solid #FFFFFF;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+div.wrap2 .logo {
+	width:796px;
+	height:143px;
+	padding:0px;
+	margin:0 auto;
+	background-image: url("images/img/webcollage5.jpg");
+	background-repeat:no-repeat;
+	color:#FFFFFF;
+	font-size:22px;
+	font-weight:bold;
+	padding:30px;
+}
+
+div.logo .slogan {
+	font-size:9px;
+	font-weight:normal;
+	margin-top:3px;
+}
+
+div.info, div.info1 {
+	width:816px;
+	line-height:25px;
+	background-color:#FFFFFF;
+	padding-left:20px;
+	padding-right:20px;
+	background-image:url("images/img/info2_222.gif");
+	background-repeat:repeat-x;
+}
+
+div.info1 { 
+	background-image:url("images/img/input222.gif");
+	float:left; 
+	border-top:1px solid #fff; 
+	background-color:#e4e4e4;
+	color:#FFFFFF;
+}
+
+div.info1 a, div.info1 a:link, div.info1 a:visited { color:#999; }
+
+div.info1 a:hover { color: #666; }
+
+div.wrap2 .leftpanel, div.wrap2 .rightpanel {
+	width:200px;
+	display: inline;
+	float:left;
+}
+
+div.wrap2 .mainpanel {
+	width:456px;
+	float:left;
+}
+
+div.leftpanel .header, div.rightpanel .header {
+	background-image:url("images/img/header222.png");
+	background-repeat:no-repeat;
+	width:180px;
+	line-height:35px;
+	padding-left:20px;
+	color:#FFFFFF;
+	overflow:hidden;
+	font-weight:bold;
+}
+#search {
+	float: right;
+	width: 260px;
+	padding-top: 7px;
+}
+
+#search fieldset {
+	border: none;
+}
+
+#search #s {
+	width: 160px;
+}
+
+#search #x {
+	width: 80px;
+}
+
+
+.text { padding:8px; text-align:justify; }
+/* uplatnuje sa na left a right stlpec */
+.text img { margin-right:10px; margin-bottom: 10px; border:0;  float:left; }
+
+.text_ { padding:15px; text-align:justify; }
+/* uplatnuje sa na hlavny stlpec */
+
+.text_map { padding:15px; text-align:left; size:11px }
+.text_map img { margin-right:10px; margin-bottom: 10px; border:0;  float:left; }
+/*for interactive map*/
+
+.text_ img { vertical-align:middle; border:0; }
+
+span.divider {
+	border-bottom:1px dashed #333333; 
+	padding-bottom:5px; 
+	margin-bottom:5px; 
+	display:block;
+}
+
+div.rightpanel .inquiry, div.leftpanel .inquiry {
+	padding:8px; 
+	text-align:justify;
+}
+
+.inquiry a, .inquiry a:link, .inquiry a:visited, .inquiry a:hover { text-decoration:none; }
+
+-->

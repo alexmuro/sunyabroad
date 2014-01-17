@@ -1,0 +1,105 @@
+/*--------------------- Last Modified  06.05.2008 ---------------------*/
+
+/*	
+*	@title 	    Studio Abroad
+*	@author 	TERRA DOTTA
+*	@version 	2.0
+*/
+/* 
+----------------------------------------------------------------------------
+Copyright  2008.                              
+Please check for cross-browser compatibility prior to making changes
+MINIMUM BROWSER CHECK :: IE6/IE7/Firefox/Safari
+
+CSS Document - custom.css
+---------------------------------------------------------------------------- 
+ */
+
+/******* CSS DOCUMENT *******/
+
+body {font-size:10pt; font-family:Arial, Helvetica, sans-serif; margin:0px; padding:0px; background-color: #ccc; margin-bottom:0px; background-image:url(bg_2_1.gif); background-repeat:repeat;  }
+#mainContainer { width: 900px;/*780px;*/ margin: 0px auto; padding: 0px; min-height:576px; }
+
+/* HEADER SECTION */
+
+#headerContainer { width: 100%; text-align: center; background-image:url(bg_2_1.gif); background-repeat:repeat;}
+#header1 { width: 100%; font-size: 18pt; color: #4D4D4D; font-weight:bold; padding: 17px 0 0 0; }
+#header2Container { width: 100%; text-align:center; margin: 0px auto;}
+#header2 { width:100%; background-color:#3381CD; font-size: 18pt; color: #ffffff; font-weight:bold; line-height: 43px; float:left; }
+#header2leftCorner { float:left; width: 13px; padding:0px; } 
+#header2rightCorner { float:left; width: 15px; }
+
+/* FUNCTIONAL LINKS */
+
+#mainNavigation { width:100%; float: right; background-color:#B28872;  }
+#mainNavigation ul { display: inline; font-size: 8pt;  float: right; margin: 0px; padding: 0px 20px 0px 0px; }
+#mainNavigation ul li { display: inline; padding-right: 6px; line-height: 26px;}
+
+/* CONTENT */
+
+#contentWrap { width: 100%; margin: 0px; background-color: #fff; float:left; padding-bottom: 50px; }
+/*
+#leftColumn { width:171px; /*205px; float: left; background-image:url(leftcolumn_bg.gif); background-repeat:repeat-y; margin-top: 20px; }
+#leftNavigation { margin-left: 10px; }*/
+
+#leftColumn { width:171px; /*205px;*/ float: left; background-image:url(leftcolumn_bg.gif); background-repeat:repeat-y; margin-top: 20px; }
+#leftNavigation { margin-left: 10px; }
+/*#rightColumn { width: 654px;/*555px; float: left; margin: 20px 10px 10px 5px; }*/
+#rightColumn {width: 650px;/*555px;*/ float: left; margin: 20px 7px 10px 8px;  }
+/*#rightColumn2 { width: 659px;/*555px; float: left; background-image:url(rightcolumn_bg.gif); background-repeat:repeat-y; margin: 9px 10px 10px 1px;}*/
+#rightColumn { width: 654px; float: left; margin: 20px 0px 10px 5px; }
+#announcements { width: 155px;/*190px*/ font-size: 12pt; font-weight: bold; margin:auto; border: 1px solid #88ADCF; }
+#announcementsHeader { background-color:#C3C4C5; line-height: 25px; font-size: 10pt;  font-weight: bold; text-align: center; color: #01529D; }
+#footer  { width: 100%; font-size: 8pt; color: #01529D; text-align: center; margin: 0px; clear: both; background-color: #fff;}
+
+/* ADMIN LAYOUT */
+#mainContainer1
+{ width: 100%; margin: auto; display: table; min-width: 980px;background-color: #fff;}
+
+#header2ContainerAdmin { width: 100%; text-align:center; margin: 0px auto; }
+#header2Admin { width:100%; background-color:#3381CD; font-size: 18pt; color: #ffffff; font-weight:bold; line-height: 43px; float:left; }
+#header2leftCornerAdmin { float:left; width: 15px; padding:0px; }
+#header2rightCornerAdmin { float:left; width: 15px; }
+
+/*#rightColumn1 { width:81%; left: 176px; float: left; margin-left: 5px; } (changeed #ticket 3423)*/
+#rightColumn1 { width:81%; left: 176px; float: left; margin-left: 15px;}
+#contentAdmin{width:100%;}
+#contentAdmin .table{ width: 90%;}
+#rightColumn3 { width:81%; left: 166px; float: left; background-image:url(rightcolumn_bg.gif); background-repeat:repeat-y; margin-left:0px;  margin-top: 10px; }
+/*#rightColumn1 { width:81%; left: 171px; float: right; margin-right:3px; }*/
+
+/* TOC Styles */
+
+#SA_TOC_Container { width: 125px;  font-weight: normal; font-size: 10pt; position: relative; top: 0px; left: 0px;  text-decoration: none; }
+.TRClass, .TRClassOn, .TRClassHover { cursor: pointer; width: 110px; position: relative; top: 0px; left: 4px; margin: 0; padding: 0; text-decoration: none; }
+.TRClassOn { cursor: auto; background-repeat: no-repeat; overflow: inherit; }
+.TRClassHover { overflow: inherit; }
+.TRText, .TRTextHover, .TRTextOn { position: relative; cursor: pointer;  width: 110px; top: -14px; margin-bottom: -14px; left: 19px; line-height: 18px; color:#000000; /*#1D3E80;*/ font-weight: normal; font-size: 10pt; font-family: inherit; font-style: normal; }
+.TRTextHover { 	color: #01529D; font-weight: normal; }
+.TRTextOn { cursor: pointer; color: #01529D; font-weight: bold; }
+.TRBullet, .TRBulletHover, .TRBulletOn { position: relative; background-image: url(smallrightarrow.gif); background-repeat: no-repeat; width: 12px; height: 12px; top: 3px;	left: 5px; 	}
+.TRBulletOn { background-image: url(smalldownarrow.gif); top: 1px; }	
+.TDClass, .TDClassHover, .TDClassOn { cursor: pointer;	width: 110px; position: relative; top: 0px; left: 6px; margin: 0; padding: 0; }
+.TDClassOn { cursor: auto; background-repeat: repeat-y; overflow: inherit; }
+.TDClassHover { overflow: inherit;}
+.TDText, .TDTextHover, .TDTextOn {width: 110px;  position: relative; cursor: pointer; top: -12px;	margin-bottom: -12px; left: 19px; line-height: 18px; color:#000000; /*#1D3E80; */font-weight: inherit; font-size: 8pt; font-family: inherit; font-style: normal; text-decoration: none; }
+.TDTextHover { cursor: pointer;	color: #01529D; font-weight: inherit;}
+.TDTextOn { cursor: auto; color: #01529D; font-weight: bold; text-decoration: none; }
+
+/*  FL Styles  */
+A.TopLink {color: #000000; text-decoration:none; cursor: pointer; font-size: 8pt; font-weight: bold; }
+.TopLinkOn { color: #3381CD; text-decoration: underline; cursor: pointer; font-size: 8pt; font-weight:bold;}
+.TopLinkOff { cursor: pointer; font-weight: normal; color:#000000; text-decoration: none; font-weight: bold;}
+.TopLinkOff:hover {
+cursor: pointer; font-weight: bold; color:#3381CD; text-decoration: none; font-weight: bold;
+}
+.TopLinkOn:hover {
+cursor: pointer; font-weight: bold; color:#3381CD; text-decoration: none; font-weight: bold;
+}
+
+A.LinkWhite {color: #000000; text-decoration:none; cursor: pointer; font-size: 8pt; font-weight: bold; }
+A.LinkWhite:Visited {text-decoration:none; cursor: pointer; font-size: 8pt; font-weight: bold; }
+A.LinkWhite:Hover{ color: #3381CD; text-decoration: underline; cursor: pointer; font-size: 8pt; font-weight:bold; }
+A.LinkWhite:active{ color: #3381CD; text-decoration: underline; cursor: pointer; font-size: 8pt; font-weight:bold;}
+.ArrowDown {background-image: url(smalldownarrow.gif); background-repeat: no-repeat;}
+.ArrowSide { background-image: url(smallrightarrow.gif); background-repeat: no-repeat; 	}
