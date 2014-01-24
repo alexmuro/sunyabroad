@@ -166,7 +166,7 @@ margin-right:auto; text-align:center; font-size:30px; padding-top:24px;">
               <ul id="hpbanners_list">
                 
                 <li style="display:block;">
-                  <img src="resources/img/banner-DID-YOU-KNOW-Oct-2013.jpg" alt="UAlbany Students">
+                  <img src="resources/img/chile_header.jpg" alt="UAlbany Students">
                 </li>
                 <li style="display:block;">
                   <img src="resources/img/homepage_banner-alumni-october-2013.jpg" alt="Graduates">
@@ -211,45 +211,43 @@ margin-right:auto; text-align:center; font-size:30px; padding-top:24px;">
       <div id="twocolumns">
         <div id="content" style="padding-bottom:100px;">
           <h2>
+            Program Map
+          </h2>
+          <div class="text_map">
+            <div id="imapfilters">Program Term: 
+              <select name="programterm" id="programterm" onChange="drawVisualization()">
+                <option value="all" selected>All Programs</option>
+                <option value="sem">Semester Length Programs</option>
+                <option value="sum">Summer Length Programs</option>
+                <option value="win">Winter Session Programs</option>
+              </select>
+              Region:
+              <select name="regionmap" id="regionmap" onChange="drawVisualization()">
+                <option value="world" selected>World</option>
+                <option value="002">Africa</option>
+                <option value="019">Americas</option>
+                <option value="021">North America</option>
+                <option value="013">Central America</option>
+                <option value="005">South America</option>
+                <option value="029">The Caribbean</option>
+                <option value="142">Asia</option>
+                <option value="150">Europe</option>
+                <option value="145">Middle East</option>
+              </select></div> 
+              <div id='visualization'></div>
+              <div id='imapmessage'>Click each location for more information</div>
+          </div>
+          <h2>
             NEWS
           </h2>
           <!-- news block -->
-          
-          
           <ul class="news-block">
             
             <!-- gets content dynamically -->
           </ul>
-          
-         <h2>
-            Program Map
-          </h2>
-        <div id="imapfilters">Program Term: 
-          <select name="programterm" id="programterm" onChange="drawVisualization()">
-            <option value="all" selected>All Programs</option>
-            <option value="sem">Semester Length Programs</option>
-            <option value="sum">Summer Length Programs</option>
-            <option value="win">Winter Session Programs</option>
-          </select>
-          Region:
-          <select name="regionmap" id="regionmap" onChange="drawVisualization()">
-            <option value="world" selected>World</option>
-            <option value="002">Africa</option>
-            <option value="019">Americas</option>
-            <option value="021">North America</option>
-            <option value="013">Central America</option>
-            <option value="005">South America</option>
-            <option value="029">The Caribbean</option>
-            <option value="142">Asia</option>
-            <option value="150">Europe</option>
-            <option value="145">Middle East</option>
-          </select></div> 
-         <div id='visualization'></div><div id='imapmessage'>Click each location for more information</div>
+        
+         
 
-
-          <a href="http://www.albany.edu/news/index.php?WT.source=home&WT.svl=center" class="more-link">
-            SEE ALL NEWS AT UALBANY'S NEWSCENTER
-          </a>
           
           </div>
           <!-- RIGHT COLUMN BEGINS -->
@@ -278,12 +276,6 @@ margin-right:auto; text-align:center; font-size:30px; padding-top:24px;">
                     .
                   </span>
                 </div>
-                
-                
-                
-                
-                
-                
               </div>
               <!-- DIV alert_box_text ENDS -->
             </div>
@@ -523,249 +515,10 @@ margin-right:auto; text-align:center; font-size:30px; padding-top:24px;">
         <div class="heading-block" style="background-image:url(&#39;http://www.albany.edu/hpfiles/assets/Getting-Started-at-UAlbany.png&#39;);">
           
         </div>
-        <!-- Getting Started END -->
+        <!-- Side Navigation -->
         
-        <ul class="side-menu">
-          <li class="side-head">
-            <a>
-              <div class="textspan" style="display:inline;">
-                <p>
-                  Study Abroad 
-                  <strong>
-                    Programs
-                  </strong>
-                </p>
-              </div>
-            </a>
-            <ul class="side_sub">
-              <li>
-                <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Programs.AdvancedSearch">
-                  All Programs
-                </a>
-              </li>
-              <li>
-                <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Programs.SearchResults&amp;Program_Name=&amp;Program_Type_ID=O&amp;pi=%7F&amp;pc=%7F&amp;pr=%7F&amp;pt=Academic+Year%7F&amp;pt=Fall%7F&amp;pt=Spring%7F&amp;Partner_ID=&amp;p_10004=%7F&amp;p_10004_t=MULTI&amp;p_10005=%7F&amp;p_10005_t=MULTI&amp;p_10011=%7F&amp;p_10011_t=MULTI&amp;Sort=Program_Name&amp;Order=asc&amp;pp=10004%2C10005%2C10011">
-                  Semester &amp; Academic Year
-                </a>
-              </li>
-              <li>
-                <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Programs.SearchResults&amp;Program_Name=&amp;Program_Type_ID=O&amp;pi=%7F&amp;pc=%7F&amp;pr=%7F&amp;pt=Summer%7F&amp;Partner_ID=&amp;p_10004=%7F&amp;p_10004_t=MULTI&amp;p_10005=%7F&amp;p_10005_t=MULTI&amp;p_10011=%7F&amp;p_10011_t=MULTI&amp;Sort=Program_Name&amp;Order=asc&amp;pp=10004%2C10005%2C10011">
-                  Summer Sessions
-                </a>
-              </li>
-              <li>
-                <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Programs.SearchResults&amp;Program_Name=&amp;Program_Type_ID=O&amp;pi=%7F&amp;pc=%7F&amp;pr=%7F&amp;pt=Winter%7F&amp;Partner_ID=&amp;p_10004=%7F&amp;p_10004_t=MULTI&amp;p_10005=%7F&amp;p_10005_t=MULTI&amp;p_10011=%7F&amp;p_10011_t=MULTI&amp;Sort=Program_Name&amp;Order=asc&amp;pp=10004%2C10005%2C10011">
-                  Wintersession
-                </a>
-              </li>
-              <li>
-                <a href="http://www.albany.edu/studyabroad/programs/service.html">
-                  Service Learning
-                  <br>
-                </a>
-              </li>
-              <li>
-                <a href="http://www.albany.edu/studyabroad/programs/othersuny.html">
-                  Other SUNY Programs
-                </a>
-              </li>
-            </ul>
-          </li>
-          
-          <li class="side-head">
-            <a>
-              <div class="textspan" style="display:inline;">
-                <p>
-                  Prospective 
-                  <strong>
-                    Students
-                  </strong>
-                </p>
-              </div>
-            </a>
-            <ul class="side_sub" contentindex="1c">
-              <li>
-                <a href="http://www.albany.edu/studyabroad/prospective/welcome.html">
-                  Welcome
-                </a>
-              </li>
-              <li>
-                <a href="https://ualbany.studioabroad.com/">
-                  Getting Started
-                </a>
-              </li>
-              <li>
-                <a href="https://ualbany.studioabroad.com/?go=cost%5Festimates">
-                  Program Costs
-                </a>
-              </li>
-              <li>
-                <a href="https://ualbany.studioabroad.com/?go=Financial%20Aid">
-                  Financial Aid
-                </a>
-              </li>
-              <li>
-                <a href="http://www.albany.edu/intled/scholarships.shtml" target="_blank">
-                  Grants &amp; Scholarships
-                </a>
-              </li>
-              <li>
-                <a href="http://www.albany.edu/studyabroad/current/health.html">
-                  Health &amp; Safety
-                </a>
-              </li>
-              <li>
-                <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Abroad.ViewLink&amp;Parent_ID=065807C1-26B9-58D3-F5AF767D00CA612B&amp;Link_ID=0675530E-26B9-58D3-F5847509BCF20449&amp;pID=3&amp;lID=13">
-                  Parents
-                </a>
-              </li>
-              <li>
-                <a href="http://www.albany.edu/studyabroad/prospective/FAQ.html">
-                  FAQ
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="side-head">
-            <a>
-              <div class="textspan" style="display:inline;">
-                <p id="tuition">
-                  Current Participants
-                </p>
-              </div>
-            </a>
-            <ul class="side_sub" contentindex="2c">
-              <li>
-                <a href="http://www.albany.edu/studyabroad/current/welcome.html">
-                  Welcome
-                </a>
-              </li>
-              <li>
-                <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Abroad.ViewLink&amp;Parent_ID=0&amp;Link_ID=70CA3DC1-BCDE-E7F3-5AFE914AC3B9A462">
-                  Academics/Credit Recognition
-                </a>
-              </li>
-              <li>
-                <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Abroad.ViewLink&amp;Parent_ID=0&amp;Link_ID=71BF67C8-BCDE-E7F3-5E1F1D32A5D2AAEE">
-                  Costs &amp; Financial Management
-                </a>
-              </li>
-              <li>
-                <a href="http://www.albany.edu/studyabroad/current/forms.html">
-                  Forms
-                </a>
-              </li>
-              <li>
-                <a href="http://www.albany.edu/studyabroad/pdf/forms/GenInfoHdbk%20WIN%20&amp;%20SP%2009.pdf" target="_blank">
-                  General Information Handbook
-                </a>
-              </li>
-              <li>
-                <a href="http://www.albany.edu/studyabroad/current/health.html">
-                  Health &amp; Safety Abroad
-                </a>
-              </li>
-              <li>
-                <a href="https://ualbany.studioabroad.com/?go=cultural">
-                  Cultural Issues &amp; Concerns
-                </a>
-              </li>
-              <li>
-                <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Abroad.ViewLink&amp;Parent_ID=0&amp;Link_ID=C72860C8-26B9-564D-D67248D8B4D66D12">
-                  Returning from Abroad
-                </a>
-              </li>
-              <li>
-                <a href="http://www.albany.edu/studyabroad/current/emergencies.html">
-                  EMERGENCIES
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="side-head">
-            <a>
-              <div class="textspan" style="display:inline;">
-                <p>
-                  Exchange Students
-                </p>
-              </div>
-            </a>
-            <ul class="side_sub" contentindex="3c">
-              <li class="selected">
-                <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Abroad.ViewLink&amp;Parent_ID=929B573D-BCDE-E7F3-5E41557CB4F3BBB0&amp;Link_ID=92A44B69-BCDE-E7F3-52C4D2F7C0EA7F6E&amp;pID=3&amp;lID=11">
-                  Become an Exchange Student
-                </a>
-              </li>
-              
-              
-            </ul>
-          </li>
-          <li class="side-head">
-            <a>
-              <div class="textspan" style="display:inline;">
-                <p>
-                  Alumni
-                </p>
-              </div>
-            </a>
-            <ul class="side_sub" contentindex="4c">
-              <li class="selected">
-                <a href="alumni/alumniwelcome.html">
-                  Welcome
-                </a>
-              </li>
-              
-              <li>
-                <a href="http://www.albany.edu/studyabroad/alumni/donate.html" target="_blank">
-                  Donate
-                </a>
-              </li>
-              <li>
-                <a href="alumni/mywords.html">
-                  In My Own Words
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="side-head">
-            <a>
-              <div class="textspan" style="display:inline;">
-                <p>
-                  My Application
-                </p>
-              </div>
-            </a>
-            <ul class="side_sub" contentindex="5c">
-              <li>
-                <a href="https://ualbany.studioabroad.com/">
-                  GET STARTED
-                </a>
-              </li>
-              <li class="selected">
-                <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Security.Login">
-                  LOGIN
-                </a>
-              </li>
-              
-            </ul>
-          </li>
-          <li class="side-head">
-            <a>
-              <div class="textspan" style="display:inline;">
-                <p>
-                  Trip Reporting
-                </p>
-              </div>
-            </a>
-            <ul class="side_sub" contentindex="6c">
-              <li>
-                <a href="https://docs.google.com/spreadsheet/viewform?formkey=dEVJYnh1RWxJZXhPdkRiM2hQYmx4SXc6MQ#gid=0" target="_blank">
-                  Report My Side Trips
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <?php include 'partials/side_nav.php';?>
+        
         <!-- Getting Started ******************************************************************* ENDS -->
         
         <!-- calendar -->

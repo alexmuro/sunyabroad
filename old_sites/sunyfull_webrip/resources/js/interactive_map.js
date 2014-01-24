@@ -974,8 +974,10 @@ if(programterm == "all" || checkterm(programterm,"<a href=\"https://ualbany.stud
  	if((ivaluesum[selectedRegion]!="") && (programterm == "sum" || programterm == "all")) { sum = ivaluesum[selectedRegion]+"<br />"; }
  	if((ivaluewin[selectedRegion]!="") && (programterm == "win" || programterm == "all")) { win = ivaluewin[selectedRegion]; }
  	document.getElementById('imapmessage').innerHTML = img + title + sem + sum + win;
+ 	$("#imapmessage").css("padding-bottom","110px");
  	imapmarkerclicked = selectedRegion;
  	}}});
+	
  if(imapmarkerclicked != "") {
  			var img ="";
  			var title = "<span class='imaptitle'>"+ivalue[imapmarkerclicked]+"</span><br />";

@@ -64,7 +64,7 @@ input, textarea, select {
 	overflow: hidden;
 	width: 448px;
 	height: 55px;
-	background: url(../img/logo.png) no-repeat;
+	background: url(../img/sa_logo_2.png) no-repeat;
 }
 .logo a {
 	display: block;
@@ -971,10 +971,27 @@ background-color: #F3F3F3;
 background: lightblue;
 }
 #imapmessage {
-	display:block;
-	padding-top:35px;
-	padding-bottom:110px;
-	color:#FF6600;
-	font-weight:bold;
-	width:600px;
+	display: block;
+	padding-top: 5px;
+	color: #FF6600;
+	font-weight: bold;
+	width: 530px;
+}
+
+#visualization{
+	background-color:#D1E9EE;
+	width:522px;
+	margin-left:-5px;
+
+}
+.text_map img {
+margin-right: 10px;
+margin-bottom: 10px;
+border: 0;
+float: left;
+overflow:hidden;
+}
+
+.text_map {
+text-align: left;
 }

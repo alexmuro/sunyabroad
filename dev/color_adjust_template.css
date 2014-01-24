@@ -1,0 +1,159 @@
+/*@color1,@color2*/
+/* primary color styles */
+
+#data-container .indications{background-color:@color1}
+#data-container .data-table .status-bg-color{background-color:@color1}
+#form-data-container .form-data .form-element .title-bg-color{background-color:@color1}
+#form-data-container .title-bg-color-param{background-color:@color1}
+#assignment-data-container .assignment-data-table .title-bg-color{background-color:@color1}
+#assignment-data-container .small-font{background-color:@color1}
+#assignment-data-container .title-bg-color{background-color:@color1}
+.alert .header{background-color:@color1}
+#questionnaire-form-container .questionnaire-form-header{background-color:@color1}
+#questionnaire-form-container .innercomment{background-color:@color1}
+#questionnaire-form-container .extracomment{background-color:@color1}
+#tab-wizard-container .title-row .title-column{background-color:@color1}
+#pop-up-container .title-row .title-column{background-color:@color1}
+#pop-up-container .upper-bg-color{background-color:@color1}
+.title-bg-color{background-color:@color1}
+.title-color{background-color:@color1}
+/*#loginctrl{background-color:@color1}*/
+.title-color{background-color:@color1}
+
+/* secondary color styles */
+
+#data-container .data-table th{background-color:@color2}
+#data-container .data-table .button-bg-color{background-color:@color2}
+#data-container .lightsolidborder{background-color:@color2}
+#form-data-container .form-data{background-color:@color2}
+#form-data-container .form-data .form-label{background-color:@color2}
+#form-data-container .form-data .form-labelMap{background-color:@color2}
+#form-data-container .form-data .grey-bg-color{background-color:@color2}
+#form-data-container .form-data .form-element .bg-color{background-color:@color2}
+#form-data-container . errorBox{background-color:@color2}
+#form-data-container .grey-bg-color-param{background-color:@color2}
+#assignment-data-container .assignment-data-header{background-color:@color2}
+#multi-select-picker-container .multi-select-picker-description{background-color:@color2}
+#multi-select-picker-container .multi-select-picker-content .multi-select-picker-content-instruction-right{background-color:@color2}
+#option-builder-container .option-builder-column-title-left{background-color:@color2}
+#option-builder-container .option-builder-column-title-center{background-color:@color2}
+#option-builder-container .option-builder-column-title-right{background-color:@color2}
+#option-builder-container .grey-bg-color{background-color:@color2}
+#questionnaire-form-container .questionnaire-form-content{background-color:@color2}
+#questionnaire-form-container .questionnaire-form-subheader{background-color:@color2}
+#question-form-container .question-form-title{background-color:@color2}
+#process-form-container .full-bdr{background-color:@color2}
+#search-wizard-container .search-wizard-content{background-color:@color2}
+#search-wizard-container .sub-center{background-color: @color2}
+#search-wizard-container .bottom-box{background-color:@color2}
+#search-wizard-container .wizard-container th{background-color:@color2}
+.form-action-buttons-bg-color{background-color:@color2}
+#pop-up-container .bg-color{background-color:@color2}
+#pop-up-container .full-bdr{background-color:@color2}
+#pagination-container .table-container th{background-color:@color2}
+.bg-color{background-color:@color2}
+.grey-bg-color{background-color:@color2}
+.form-action-buttons-bg-color{background-color:@color2}
+.grey-bg-bdr{background-color:@color2}
+.full-bdr1{background-color:@color2}
+#username-container{background-color:@color2}
+.simple-search-holder .full-bdr{background-color:@color2}
+.box-color{background-color:@color2}
+.process-bg-color{background-color:@color2}
+#data-container .data-table-sorter th{background-color:@color2}
+
+/* old skin: */
+
+/* Primary color */
+
+/*#header-container .header-title{background-color:@color1}*/
+#header-container .header-title .header-center .center-blue{background-color:@color1}
+#header-container #header-tabs-container li.selected{background-color:@color1}
+/*.wdgt-container .wdgt-header{background-color:@color1}*/
+#data-container .data-header{background-color:@color1}
+#data-container .data-table .title-bg-color{background-color:@color1}
+#data-container .indications{background-color:@color1}
+#data-container .data-table .status-bg-color{background-color:@color1}
+#form-data-container .form-data-header-title{background-color:@color1}
+#form-data-container .form-data .form-element .title-bg-color{background-color:@color1}
+#form-data-container .title-bg-color-param{background-color:@color1}
+#assignment-data-container #assignment-data-top-header{background-color:@color1}
+#assignment-data-container .assignment-data-table .title-bg-color{background-color:@color1}
+#assignment-data-container .small-font{background-color:@color1}
+#assignment-data-container .title-bg-color{background-color:@color1}
+.alert .header{background-color:@color1}
+#multi-select-picker-container .multi-select-picker-header{background-color:@color1}
+#option-builder-container .option-builder-header{background-color:@color1}
+#questionnaire-form-container .questionnaire-form-title{background-color:@color1}
+#questionnaire-form-container .questionnaire-form-header{background-color:@color1}
+#questionnaire-form-container .innercomment{background-color:@color1}
+#questionnaire-form-container .extracomment{background-color:@color1}
+#process-form-container .title-row .title-column{background-color:@color1}
+#search-wizard-container .wizard-container .wizard-header{background-color:@color1}
+#tab-wizard-container .title-row .title-column{background-color:@color1}
+#pop-up-container .title-row .title-column{background-color:@color1}
+#pop-up-container .upper-bg-color{background-color:@color1}
+#pagination-container .table-header{background-color:@color1}
+#pagination-container .table-container .title-bg-color{background-color:@color1}
+.title-bg-color{background-color:@color1}
+.title-color{background-color:@color1}
+.tab-below-bg{background-color:@color1}
+/*#loginctrl{background-color:@color1}*/
+.title-color{background-color:@color1}
+.threecol-cont1x {background-color:@color1}
+.title-header-left{background-color:@color1}
+.title-header-right{background-color:@color1}
+.title-header-center{background-color:@color1}
+/*.Button,.Button100,.Button-100,.Button50,.Button150,.Button200,.Button250{background-color:@color1}*/
+
+/* secondary color */
+/*#header-container .header-title .header-center .center-black{background-color:@color2}*/
+#data-container .data-table th{background-color:@color2}
+#data-container .data-table .bg-color{background-color:@color2}
+.bg-color1{background-color:@color2;color:#000}
+#data-container .data-table .button-bg-color{background-color:@color2}
+#data-container .lightsolidborder{background-color:@color2}
+#form-data-container .form-data{background-color:@color2}
+#form-data-container .form-data .form-label{background-color:@color2}
+#form-data-container .form-data .form-labelMap{background-color:@color2}
+#form-data-container .form-data .grey-bg-color{background-color:@color2}
+#form-data-container .form-data .form-element .bg-color{background-color:@color2}
+#form-data-container . errorBox{background-color:@color2}
+#form-data-container .grey-bg-color-param{background-color:@color2}
+#assignment-data-container .assignment-data-header{background-color:@color2}
+#assignment-data-container .assignment-data-table .bg-color{background-color:@color2}
+#multi-select-picker-container .multi-select-picker-description{background-color:@color2}
+#multi-select-picker-container .multi-select-picker-content .multi-select-picker-content-instruction-right{background-color:@color2}
+#option-builder-container .option-builder-column-title-left{background-color:@color2}
+#option-builder-container .option-builder-column-title-center{background-color:@color2}
+#option-builder-container .option-builder-column-title-right{background-color:@color2}
+#option-builder-container .grey-bg-color{background-color:@color2}
+#questionnaire-form-container .questionnaire-form-content{background-color:@color2}
+#questionnaire-form-container .questionnaire-form-subheader{background-color:@color2}
+#question-form-container .question-form-title{background-color:@color2}
+#process-form-container .bg-color{background-color:@color2}
+#process-form-container .full-bdr{background-color:@color2}
+#search-wizard-container .search-wizard-content{background-color:@color2}
+#search-wizard-container .bg-color{background-color:@color2}
+#search-wizard-container	.sub-center{background-color: @color2}
+#search-wizard-container .bottom-box{background-color:@color2}
+#search-wizard-container .wizard-container th{background-color:@color2}
+.form-action-buttons-bg-color{background-color:@color2}
+#tab-wizard-container .full-bdr{background-color:@color2}
+#pop-up-container .bg-color{background-color:@color2}
+#pop-up-container .full-bdr{background-color:@color2}
+#pagination-container .table-container th{background-color:@color2}
+#pagination-container .table-container .bg-color{background-color:@color2}
+.bg-color{background-color:@color2}
+.grey-bg-color{background-color:@color2}
+.form-action-buttons-border-top{background-color:@color2}
+.form-action-buttons-bg-color{background-color:@color2}
+.grey-bg-bdr{background-color:@color2}
+#username-container{background-color:@color2}
+.simple-search-holder .full-bdr{background-color:@color2}	
+.box-color{background-color:@color2}
+.process-bg-color{background-color:@color2}
+.full-bdr1{background-color:@color2}
+#process-form-container .no-border-bg-color{background-color:@color2}	
+
+.white-font{color:#000;}/* don't ask :) */

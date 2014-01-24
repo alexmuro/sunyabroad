@@ -63,9 +63,9 @@ function initCarousel() {
 		generatePagination: 'div.pagination',
 		circularRotation: true,
 		pauseOnHover: false,
-		autoRotation: false,
+		autoRotation: true,
 		maskAutoSize: false,
-		switchTime: 2000,
+		switchTime: 4000,
 		animSpeed: 600,
 		step: 1
 	});
