@@ -19,15 +19,12 @@
     <link href="css/sb-admin.css" rel="stylesheet">
     <script src='js/medium-editor.js'></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
-     <script src="js/angular-medium-editor.js"></script>
+    <script src="js/angular-medium-editor.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
     <script src='https://cdn.firebase.com/v0/firebase.js'></script>
     <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
     <script src='js/angular-medium-editor.js'></script> 
     <script src='src/sunyabroad_cms.js'></script>
-    
-
-
 </head>
 
 <body>

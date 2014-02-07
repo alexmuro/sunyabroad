@@ -30,6 +30,17 @@
 </h2>
 <!-- news block -->
 <ul class="news-block">
-  
+  <li ng-repeat="story in content">
+    <div>
+      <img ng-src="{{story.img}}" width="163" height="112">
+    </div>
+    <div class="text-place">
+      <strong class="subject" style="text-transform:uppercase;">{{story.program}}</strong>
+      <h3><a href="{{story.url}}+'"><p>{{story.title}}</p>
+      </a></h3>
+      <p></p>
+      <p>{{story.content}}<p></p>
+      </div>
+  </li>
   <!-- gets content dynamically -->
 </ul>

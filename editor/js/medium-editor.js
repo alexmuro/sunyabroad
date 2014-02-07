@@ -98,7 +98,7 @@ if (typeof module === 'object') {
             disableToolbar: false,
             firstHeader: 'h3',
             forcePlainText: true,
-            placeholder: 'Type your text',
+            placeholder: '',
             secondHeader: 'h4',
             targetBlank: false
         },

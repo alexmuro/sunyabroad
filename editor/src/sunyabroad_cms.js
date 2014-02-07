@@ -28,10 +28,10 @@ var CMSControllers = angular.module('CMSControllers', []);
 CMSControllers.controller('PagesController',['$scope', '$firebase',
 	function($scope, $firebase) {
 		$('#newPage').hide();
-		$scope.pages = $firebase(new Firebase("https://sunyabroad.firebaseio.com/"));
+		$scope.pages = $firebase(new Firebase("https://sunyabroad.firebaseio.com/pages"));
 		$scope.addPage = function(e) {
 		if (e.keyCode != 13) return;
-			$scope.pages.$add({title: $scope.pageTitle,createdAt:new Date(),editedAt:new Date()});
+			$scope.pages.$add({title: $scope.pageTitle,createdAt:new Date(),editedAt:new Date(),url:encodeURIComponent($scope.pageTitle.replaceAll(" ","_").toLowerCase().replaceAll("?","").replaceAll("&","and"))});
 			$scope.pageTitle= "";
 		};
 
@@ -42,19 +42,29 @@ CMSControllers.controller('EditorController',['$scope', '$firebase','$routeParam
 	function($scope, $firebase,$routeParams) {
 		$scope.title = $routeParams.id;
 		//$scope.text = "";
-
-		$scope.pages = $firebase(new Firebase("https://sunyabroad.firebaseio.com/"));
+		var pageref = new Firebase("https://sunyabroad.firebaseio.com/pages");
+		$scope.pages = $firebase(pageref);
 		$scope.pages.$on('loaded', function() {
-			$scope.page = $scope.pages[$routeParams.id];
-			$scope.title = $scope.page.title;
-			//$scope.text = $scope.page.body;
-			$scope.editPage = function(e) {
-				//if (e.keyCode != 13) return;
-				//$scope.page.body = $scope.text;
-				//$scope.page.$save;
-				console.log($scope.text)
-			}	
-		}); 
+
+			$scope.title = $scope.pages[$routeParams.id].title;
+			$scope.html_content = $scope.pages[$routeParams.id].body;
+			console.log($scope.pages[$routeParams.id]);
+			$scope.savePage = function() {
+				
+				console.log($scope.html_content);
+				$scope.pages[$routeParams.id].body = $scope.html_content;
+				$scope.pages[$routeParams.id].title = $scope.title;
+				$scope.pages[$routeParams.id].url = encodeURIComponent($scope.title.replaceAll(" ","_").toLowerCase().replaceAll("?","").replaceAll("&","and"))
+				$scope.pages.$save($routeParams.id);
+				console.log($scope.pages[$routeParams.id]);
+			};
+		});
 	}
 ]);
+
+String.prototype.replaceAll = function (sfind, sreplace) {
+     var str = this;
+    while (str.indexOf(sfind)>-1) str=str.replace(sfind, sreplace);
+    return str;
+};
 

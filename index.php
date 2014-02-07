@@ -1,232 +1,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0022)http://www.albany.edu/ -->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="sunyabroad">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
     <meta name="keywords" content="study abroad, international, inexpensive, travel, University at Albany, Africa, Antarctica, Asia, Central America, Europe, Middle East, North America, South America, West Indies, Albany, Antarctica, Argentina, Belarus, Brazil, Cambodia, Canada, Chile, China, Costa, Rica, Dominican, Republic, Denmark, Ethiopia, Finland, France, Germany, India, Ireland, Israel, Italy, Japan, Korea, Mexico, Namibia, Netherlands, Norway, Puerto, Rico, Russia, Singapore, South, Africa, Spain, Sweden, Taiwan, Tanzania, Thailand, Trinidad and Tobago, United Arab Emirates, United Kingdom, England, Scotland, Abo, Arnhem, Bangalore, Beer Sheva, Beijing, Braunschweig, Buenos Aires, Campinas, Cape Town, Chengdu, Chicoutimi, Chuncheon, Copenhagen, Dubai, Dublin, Durban, East Sussex, Florence, Galway, Glasgow, Gothenburg, Grenoble, Guadalajara, Gyeongsan, Haifa, Hirakata, Osaka, Hong Kong, Jerusalem, Kingston on Hull, London, Madrid, Milan, Montpellier, Montreal, Moscow, Nanjing, Nijmegen, Nottingham, Oulu, Pune, Quebec City, Queretaro, San Jose, San Juan, Santiago, Santo Domingo, Seoul, Shanghai, Singapore, St. Augustine, Swansea, Wales, Taipei City, Tel Aviv, Tilburg, Tokyo, Valencia, Wuerzburg">
-    <title>
-      University at Albany - SUNY - Home Page
-    </title>
+    <title>University at Albany - SUNY - Home Page</title>
     <link media="all" rel="stylesheet" type="text/css" href="resources/css/all.css">
-    <script src="resources/js/jquery-latest.min.js">
-    </script>
-    <script type="text/javascript" src="resources/js/jquery.main.js">
-    </script>
-    <script type="text/javascript" src="resources/js/accordian.js">
-    </script>
-    <script type="text/javascript" src="resources/js/content.js">
-    </script>
+    <script src="resources/js/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="resources/js/jquery.main.js"></script>
+    <script type="text/javascript" src="resources/js/accordian.js"></script>
+    <script type="text/javascript" src="resources/js/content.js"></script>
     <script type='text/javascript' src='http://www.google.com/jsapi'></script>
-     <script type="text/javascript" src="resources/js/interactive_map.js">
-    </script>
-
+    <script type="text/javascript" src="resources/js/interactive_map.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
+    <script src='resources/js/sunyabroad_angular.js'></script>  
     <!-- Begin Mobile Detection Scripts -->
   </head>
-  <body style="">
-    <div id="scrim" style="background-image: url(Images/semitransparentbg.png); width:100%; 
-position:fixed; top:0px; left:0px; display:none; height:2000px; z-index:99;">
-  <div id="mobileArea" style="display:none; position:relative; margin-left:auto; margin-right:auto; font-size:1.2em; z-index:100; color:#00F; text-align:center; top:465px;">
-    <div id="mobilelink" style="background-image:url(Images/mobilebutton.png); width:900px; height:70px; margin-left:auto; margin-right:auto; text-align:center; font-size:30px; padding-top:24px;margin-bottom: 24px;">
-      <a href="http://m.albany.edu/index.php?WT.source=dt" style="color:#ffffff;">
-        <strong style="color:#fff;">
-          Visit the UAlbany Mobile Site
-          <br>
-          <br>
-          http://m.albany.edu
-        </strong>
-      </a>
-    </div>
-    <div id="non-mobilelink" onclick="hidePopover()" style="background-image:url(http://www.albany.edu/Images/mobilebuttonno.png); width:900px; height:72px; margin-left:auto; 
-margin-right:auto; text-align:center; font-size:30px; padding-top:24px;">
-  <a href="http://www.albany.edu/#" style="color: #7f3f97;">
-    <strong>
-      Remain on the Full University Web Site
-    </strong>
-  </a>
-    </div>
-    <!-- DIV END non-mobilelink -->
-    
-      </div>
-  </div>
-  
-  
+
+  <body>
   <!-- wrapper block -->
   <div id="page">
     
     <!-- holding block -->
     <div id="wrapper">
-      
-      <!-- header -->
-      <div id="header">
-        <div class="holder">
-          <div class="top-section">
-            
-            <!-- logo -->
-            <h1 class="logo">
-              <a href="http://www.albany.edu/#">
-                UNIVERSITY AT ALBANY. State University of New York
-              </a>
-            </h1>
-            <div class="side-block">
-              <div class="row">
-                
-                
-                <!--========== Nav Top Right = = = = = -->
-                
-                <a href="http://www.albany.edu/myualbany/index.php?WT.source=home" class="my-ualbany">
-                  my UALBANY
-                </a>
-                <ul class="top-menu">
-                  <li>
-                    <a href="http://www.albany.edu/directories.php?WT.source=home">
-                      Directories
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.albany.edu/calendars.php?WT.source=home">
-                      Calendars &amp; Schedules
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.albany.edu/about/about_visiting.php?WT.source=home">
-                      Visit
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.albany.edu/about/a-z-index.php?WT.source=home">
-                      A-Z Index
-                    </a>
-                  </li>
-                </ul>
-                <!--========== Ent Div NAV Top Right = = = = = -->
-                
-                
-                <!--========== Begin Search = = = = = -->
-                
-                
-                <!--========== Begin Search = = = = = -->
-                <div style="padding-top:30px;margin-left: 290px;">
-                  <form action="http://www.albany.edu/search/search_results.php" id="cse-search-box" method="get" name="cse-search-box">
-                    <input type="hidden" name="cx" value="009452333206896616693:abbjmkl5yry">
-                    <input type="hidden" name="cof" value="FORID:11">
-                    <input type="hidden" name="ie" value="UTF-8">
-                    <input type="text" name="q" size="20" value="Search">
-                    <input src="resources/img/btnSearch.gif" name="sa" type="image" value="Search" class="searchButton2">
-                    <input name="siteurl" type="hidden" value="www.albany.edu/">
-                    <input name="ref" type="hidden" value="">
-                    <input name="ss" type="hidden" value="">
-                  </form>
-                  <script type="text/javascript" src="resources/img/brand">
-                  </script>
-                  
-                </div>
-                <!--========== End Search ==========-->
-                
-                
-              </div>
-              <!-- DIV row - menu items and search form -->
-              
-              
-              <!-- submenu -->
-              <div class="submenu">
-                <ul>
-                  <li>
-                    <a href="http://albany.edu/studyabroad">
-                      Study Abroad Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Programs.AdvancedSearch">
-                      Programs
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Abroad.ViewLink&Parent_ID=065807C1-26B9-58D3-F5AF767D00CA612B&Link_ID=06608F42-26B9-58D3-F5B0F75E57A081D2&pID=3&lID=8">
-                      How To Apply
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://ualbany.studioabroad.com/index.cfm?FuseAction=Security.Login">
-                      Login
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- main navigation -->
-          <!-- main gallery -->
-          <div class="main-gallery" style="position:relative: top: -40px;">
-            <div class="mask">
-              <!-- Homepage homepage_banner_list BEGIN -->
-              
-              <ul id="hpbanners_list">
-                
-                <li style="display:block;">
-                  <img src="resources/img/chile_header.jpg" alt="UAlbany Students">
-                </li>
-                <li style="display:block;">
-                  <img src="resources/img/homepage_banner-alumni-october-2013.jpg" alt="Graduates">
-                </li>
-                
-                <li style="display:block;">
-                  <img src="resources/img/homepage_banner_science_hub_biology.jpg" alt="A hub for new ideas">
-                </li>
-                <li style="display:block;">
-                  <img src="resources/img/homepage_banner_graduate.jpg" alt="Graduate">
-                </li>
-                <li style="display:block;">
-                  <img src="resources/img/homepage_banner_value_minerva.jpg" alt="Excellence at a great value">
-                </li>
-                <li style="display:block;">
-                  <img src="resources/img/homepage_banner_global_students.jpg" alt="Global Perspective">
-                </li>
-              </ul>
-              
-              <!-- Homepage homepage_banner_list Ends -->
-              
-              
-              <div class="pagination-block">
-                
-                <a href="http://www.albany.edu/#" class="prev">
-                  previous
-                </a>
-                <div class="pagination">   
-                      
-              </div>
-              <a href="http://www.albany.edu/#" class="next">
-                next
-              </a>
-              
-                  </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php include 'partials/header.php' ?>  
     <!-- main block -->
     <div id="main">
       <div id="twocolumns">
         <div id="content" style="padding-bottom:100px;">
-            <?php 
-            $page = 'main.php';
-            if(isset($_GET['p'])){
-              switch ($_GET['p']) {
-                  case 'why_study_abroad':
-                      $page = 'welcome.php';
-                      break;
-                  case 1:
-                      echo "i equals 1";
-                      break;
-                  case 2:
-                      echo "i equals 2";
-                      break;
-                  default:
-                     $page = 'main.php';
-              }
-            }
-            include 'partials/'.$page;
-            ?>
+          <div ng-view></div>
         </div>
           <!-- RIGHT COLUMN BEGINS -->
           

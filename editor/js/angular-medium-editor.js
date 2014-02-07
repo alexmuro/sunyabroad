@@ -9,7 +9,7 @@ angular.module('angular-medium-editor', []).directive('mediumEditor', function (
       if (iAttrs.options) {
         opts = angular.fromJson(iAttrs.options);
       }
-      var placeholder = opts.placeholder || 'Type your text';
+      var placeholder = opts.placeholder || '';
       iElement.on('blur', function () {
         scope.$apply(function () {
           if (iElement.html() == '<p><br></p>') {

@@ -31,7 +31,7 @@
                 </a>
               </li>
               <li>
-                <a href="http://www.albany.edu/studyabroad/programs/othersuny.html">
+                <a href="#/pages/other_suny_programs">
                   Other SUNY Programs
                 </a>
               </li>
@@ -60,7 +60,7 @@
             </a>
             <ul class="side_sub" contentindex="1c">
               <li>
-                <a href="?p=why_study_abroad">
+                <a href="#/pages/why_study_abroad">
                   Why Study Abroad
                 </a>
               </li>
@@ -80,12 +80,12 @@
                 </a>
               </li>
               <li>
-                <a href="http://www.albany.edu/intled/scholarships.shtml" target="_blank">
+                <a href="#/pages/grants_and_scholarships">
                   Grants &amp; Scholarships
                 </a>
               </li>
               <li>
-                <a href="http://www.albany.edu/studyabroad/current/health.html">
+                <a href="#/pages/health_and_saftey">
                   Health &amp; Safety
                 </a>
               </li>

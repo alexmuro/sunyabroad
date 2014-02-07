@@ -1,6 +1,6 @@
 <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">{{title}}</h1>
+                    <h1 class="page-header"><input type="text" ng-model="title" style="border:none;"><a class="btn" ng-click="savePage()">Save</a> </h1>
                     <a href="#/pages">Back</a>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -16,7 +16,7 @@
         <!-- /.panel-heading -->
         <div class="panel-body">
             <form name="demo">
-                <div ng-model="text" medium-editor style="min-height:500px" ng-keydown="editPage($event)"></div>
+                <div ng-model="html_content" medium-editor style="min-height:500px"></div>
             </form>
         </div>
         <!-- /.panel-body -->
