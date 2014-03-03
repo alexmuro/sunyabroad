@@ -997,3 +997,8 @@ overflow:hidden;
 .text_map {
 text-align: left;
 }
+
+.side-head {
+	font-size: normal;
+	font-weight: normal;
+}

@@ -12,8 +12,6 @@
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- Page-Level Plugin CSS - Tables -->
     <link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/demo.css">
     <link rel="stylesheet" href="css/medium-editor.css">
     <!-- SB Admin CSS - Include with every page -->
     <link href="css/sb-admin.css" rel="stylesheet">
@@ -75,6 +73,9 @@
                     </li>
                      <li>
                         <a href="#"><i class="fa fa-dashboard fa-edit"></i>Student Prospectives</a>
+                    </li>
+                     <li>
+                        <a href="#/menu"><i class="fa fa-dashboard fa-edit"></i>Site Menu</a>
                     </li>
                     
                     

@@ -305,3 +305,11 @@ table.dataTable thead .sorting:after {
 .show-grid {
     margin: 15px 0;
 }
+.clearInput{
+    background-color:transparent;
+    border: 0px solid;
+}
+
+.fa-hover:hover{
+    color:#fff;
+}

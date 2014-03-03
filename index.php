@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
     <meta name="keywords" content="study abroad, international, inexpensive, travel, University at Albany, Africa, Antarctica, Asia, Central America, Europe, Middle East, North America, South America, West Indies, Albany, Antarctica, Argentina, Belarus, Brazil, Cambodia, Canada, Chile, China, Costa, Rica, Dominican, Republic, Denmark, Ethiopia, Finland, France, Germany, India, Ireland, Israel, Italy, Japan, Korea, Mexico, Namibia, Netherlands, Norway, Puerto, Rico, Russia, Singapore, South, Africa, Spain, Sweden, Taiwan, Tanzania, Thailand, Trinidad and Tobago, United Arab Emirates, United Kingdom, England, Scotland, Abo, Arnhem, Bangalore, Beer Sheva, Beijing, Braunschweig, Buenos Aires, Campinas, Cape Town, Chengdu, Chicoutimi, Chuncheon, Copenhagen, Dubai, Dublin, Durban, East Sussex, Florence, Galway, Glasgow, Gothenburg, Grenoble, Guadalajara, Gyeongsan, Haifa, Hirakata, Osaka, Hong Kong, Jerusalem, Kingston on Hull, London, Madrid, Milan, Montpellier, Montreal, Moscow, Nanjing, Nijmegen, Nottingham, Oulu, Pune, Quebec City, Queretaro, San Jose, San Juan, Santiago, Santo Domingo, Seoul, Shanghai, Singapore, St. Augustine, Swansea, Wales, Taipei City, Tel Aviv, Tilburg, Tokyo, Valencia, Wuerzburg">
     <title>University at Albany - SUNY - Home Page</title>
+    
     <link media="all" rel="stylesheet" type="text/css" href="resources/css/all.css">
+    
     <script src="resources/js/jquery-latest.min.js"></script>
     <script type="text/javascript" src="resources/js/jquery.main.js"></script>
     <script type="text/javascript" src="resources/js/accordian.js"></script>

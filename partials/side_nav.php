@@ -1,5 +1,24 @@
-<ul class="side-menu">
-          <li class="side-head">
+<ul class="side-menu" ng-controller="MenuController">
+  <li class="side-head" ng-repeat="item in menuItems| orderByPriority">
+    <a>
+      <div class="textspan" style="display:inline;">
+        <p>
+          <strong>
+          {{item.name}}
+          </strong>
+        </p>
+      </div>
+    </a>
+    <ul class="side_sub">
+      <li ng-show="subitem.parent == item.$id" ng-repeat="subitem in submenuItems |  orderByPriority">
+        <a>
+          {{subitem.name}}
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+          <!-- <li class="side-head">
             <a>
               <div class="textspan" style="display:inline;">
                 <p>
@@ -211,5 +230,5 @@
                 </p>
               </div>
             </a>
-          </li>
+          </li> -->
         </ul>

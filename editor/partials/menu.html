@@ -1,0 +1,69 @@
+<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Menu{{currentOrder}}</h1>
+                    <a onclick="$('#newMenuItem').show()">Add New Menu Item</a>
+                    <div class="form-group" id="newMenuItem">
+                    <input class="form-control" ng-model="menuItemName" ng-keydown="addPage($event)" placeholder="Page Title">
+                    <p class="help-block">Hit Enter to save.</p>
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+<div class="col-lg-12">
+    <div class="panel panel-default">
+       <!--  <div class="panel-heading">
+            DataTables Advanced Tables
+        </div> -->
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                        <tr>
+                            <th colspan=2>#</th>
+                            <th>Menu Item</th>
+                            <th>Url</th>
+                            <th>Last Edited By</th>
+                            <th>Created At</th>
+                            <th>Add Child</th>
+                            <th>Delete</th>                            
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in menuItems| orderByPriority">
+                        <tr class="odd gradeX" ng-hide="">
+                            <td colspan=2><i ng-click="moveUp(item.$id)" ng-hide="item.$priority == 1" class="fa fa-sort-desc fa-4 fa-hover"></i><br><i ng-click="moveDown(item.$id)" ng-hide="item.$priority == currentOrder" class="fa fa-5 fa-sort-asc fa-hover"></i><br>
+                                {{item.$priority}}</td>
+                            <td><input ng-model="item.name" class="col-lg-12 clearInput"  ng-blur="editItem($event,item.$id)"></td>
+                            <td><input ng-model="item.url" class="col-lg-12 clearInput"  ng-blur="editItem($event,item.$id)"></td>
+                            <td>{{item.createdAt | date:'short'}}</td>
+                            <td >{{item.editedAt | date:'medium'}}</td>
+                            <td class="center"><i ng-click="addChild(item.$id)" class="fa fa-plus-circle"></i></td>
+                            <td class="center"><i ng-click="deleteItem(item.$id)" class="fa fa-minus-circle"></i></td>
+                        </tr>
+                        <tr ng-show="subitem.parent == item.$id" ng-repeat="subitem in submenuItems |  orderByPriority | filter: { parent: item.$id }">
+                            <td></td>
+                            <td><i ng-click="moveChildUp(item.$id,subitem.$id)" ng-hide="subitem.$priority == 1" class="fa fa-sort-desc fa-4 fa-hover"></i><br><i ng-click="moveChildDown(item.$id,subitem.$id)" ng-hide="subitem.$priority == getKeyIndex(item.$id)" class="fa fa-5 fa-sort-asc fa-hover"></i><br>
+                                {{subitem.$priority}}</td>
+                            <td><input ng-model="subitem.name" class="col-lg-12 clearInput"  ng-blur="editSub($event,subitem.$id)"></td>
+                            <td><input ng-model="subitem.url" class="col-lg-12 clearInput"  ng-blur="editSub($event,subitem.$id)"></td>
+                            <td>{{subitem.createdAt | date:'short'}}</td>
+                            <td >{{subitem.editedAt | date:'medium'}}</td>
+                            <td class="center"></td>
+                            <td class="center"><i ng-click="deleteChild(item.$id,subitem.$id)" class="fa fa-minus-circle"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+            <div class="well">
+                
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<!-- /.col-lg-12 -->
+</row>
