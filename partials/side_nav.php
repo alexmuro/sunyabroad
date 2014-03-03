@@ -11,7 +11,7 @@
     </a>
     <ul class="side_sub">
       <li ng-show="subitem.parent == item.$id" ng-repeat="subitem in submenuItems |  orderByPriority">
-        <a>
+        <a ng-href="subitem.url">
           {{subitem.name}}
         </a>
       </li>

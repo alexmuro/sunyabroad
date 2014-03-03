@@ -188,24 +188,10 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 		};
 		$scope.deleteItem = function(key){
 			
-			var current_val = $scope.submenuItems[key].$priority;
-			keys = $scope.submenuItems.$getIndex();
-			keys.forEach(function(dex, i) {
-				if($scope.submenuItems[dex].$priority >= current_val){
-					$scope.submenuItems[dex].$priority--;
-				}
-			});
-			$scope.currentOrder--;
-
-			$scope.submenuItems.$save().then(function(){
-				$scope.submenuItems.$remove(key);
-			});
-		};
-		$scope.deleteChild = function(in_parent,key){
 			var current_val = $scope.menuItems[key].$priority;
 			keys = $scope.menuItems.$getIndex();
 			keys.forEach(function(dex, i) {
-				if($scope.menuItems[dex]['parent'] == in_parent && $scope.menuItems[dex].$priority >= current_val){
+				if($scope.menuItems[dex].$priority >= current_val){
 					$scope.menuItems[dex].$priority--;
 				}
 			});
@@ -213,6 +199,20 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 
 			$scope.menuItems.$save().then(function(){
 				$scope.menuItems.$remove(key);
+			});
+		};
+		$scope.deleteChild = function(in_parent,key){
+			var current_val = $scope.submenuItems[key].$priority;
+			keys = $scope.submenuItems.$getIndex();
+			keys.forEach(function(dex, i) {
+				if($scope.submenuItems[dex]['parent'] == in_parent && $scope.submenuItems[dex].$priority >= current_val){
+					$scope.submenuItems[dex].$priority--;
+				}
+			});
+			$scope.currentOrder--;
+
+			$scope.submenuItems.$save().then(function(){
+				$scope.submenuItems.$remove(key);
 			});
 		}
 	}
