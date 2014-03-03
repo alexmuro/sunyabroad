@@ -18,7 +18,8 @@
     </ul>
   </li>
 </ul>
-          <!-- <li class="side-head">
+<ul class="side-menu" ng-controller="MenuController">
+     <li class="side-head">
             <a>
               <div class="textspan" style="display:inline;">
                 <p>
@@ -230,5 +231,5 @@
                 </p>
               </div>
             </a>
-          </li> -->
+          </li> 
         </ul>
