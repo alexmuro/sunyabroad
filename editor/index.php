@@ -19,12 +19,14 @@
     <link href="css/sb-admin.css" rel="stylesheet">
 
     <!-- Javascripts  -->
+
     <script src='js/medium-editor.js'></script>
+     <script src="js/angular-medium-editor.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
-    <script src="js/angular-medium-editor.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
     <script src='https://cdn.firebase.com/v0/firebase.js'></script>
     <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
+
     <script src='js/angular-medium-editor.js'></script> 
     <script src='src/sunyabroad_cms.js'></script>
 </head>
@@ -76,22 +78,22 @@
                         <a href="#"><i class="fa fa-dashboard fa-edit"></i> Pages</a>
                     </li>
                      <li>
-                        <a href="#"><i class="fa fa-home"></i> Blog</a>
+                        <a href="#/posts"><i class="fa fa-home"></i> Blog</a>
                     </li>
                     <li>
                         <a href="#/menu"><i class="fa fa-list"></i> Menu</a>
                     </li>
                     <li>
-                        <a href="#/menu"><i class="fa fa-camera-retro fa-edit"></i> Header Images</a>
+                        <a href="#/headers"><i class="fa fa-camera-retro fa-edit"></i> Header Images</a>
                     </li>
                     <li>
-                        <a href="#/menu"><i class="fa fa-calendar fa-edit"></i> Calendar</a>
+                        <a href="#/calendar"><i class="fa fa-calendar fa-edit"></i> Calendar</a>
                     </li>
                     <li>
-                        <a href="#/menu"><i class="fa fa-camera"></i> Featured Photos</a>
+                        <a href="#/photos"><i class="fa fa-camera"></i> Featured Photos</a>
                     </li>
                     <li>
-                        <a href="#/menu"><i class="fa fa-video-camera"></i> Featured Video</a>
+                        <a href="#/video"><i class="fa fa-video-camera"></i> Featured Video</a>
                     </li>
                    
                     

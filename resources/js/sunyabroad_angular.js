@@ -3,6 +3,7 @@ var app = angular.module('sunyabroad',
 		'firebase',
 		'ngRoute',
 		'SAControllers',
+		'ngAnimate',
 	]
 );
 
@@ -21,6 +22,27 @@ app.config(['$routeProvider',
         redirectTo: '/'
       });
   }]);
+app.animation('.my-show-hide-animation', function() {
+	console.log('helo');
+  return {
+    beforeAddClass : function(element, className, done) {
+      if(className == 'ng-hide') {
+        jQuery(element).hide("500");
+      }
+      else {
+        done();
+      }
+    },
+    removeClass : function(element, className, done) {
+      if(className == 'ng-hide') {
+        jQuery(element).show("500");
+      }
+      else {
+        done();
+      }
+    }
+  };
+});
 
 
 var SAControllers = angular.module('SAControllers', []);
@@ -67,6 +89,15 @@ SAControllers.controller('MainController',['$scope',
 				console.log('menu keys',keys);
 			});
 		});
+		$scope.setMenu = function(key){
+			$scope.currentMenu = key;
+		};
+		$scope.showMenu = function(key){
+			if($scope.currentMenu == key){
+				return true;
+			}
+			return false;
+		};
 	}
 ]);
 

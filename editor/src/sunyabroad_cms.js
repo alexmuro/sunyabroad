@@ -29,16 +29,20 @@ app.config(['$routeProvider',
       when('/pages', {
         templateUrl: 'partials/pages.html',
         controller: 'PagesController'
-      }).
-        when('/menu', {
+      })
+     .when('/posts', {
+        templateUrl: 'partials/posts.html',
+        controller: 'PostsController'
+      })
+      .when('/menu', {
         templateUrl: 'partials/menu.html',
         controller: 'MenuController'
-      }).
-      when('/pages/:id', {
+      })
+      .when('/edit/:type/:id', {
         templateUrl: 'partials/editor.html',
         controller: 'EditorController'
-      }).
-      otherwise({
+      })
+      .otherwise({
         redirectTo: '/pages'
       });
   }]);
@@ -56,11 +60,23 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 		};
 	}
 ])
+.controller('PostsController',['$scope', '$firebase',
+	function($scope, $firebase) {
+		$('#newPost').hide();
+		$scope.posts = $firebase(new Firebase("https://sunyabroad.firebaseio.com/posts"));
+		$scope.addPage = function(e) {
+		if (e.keyCode != 13) return;
+			$scope.posts.$add({title: $scope.pageTitle,createdAt:new Date(),editedAt:new Date(),url:encodeURIComponent($scope.pageTitle.replaceAll(" ","_").toLowerCase().replaceAll("?","").replaceAll("&","and"))});
+			$scope.pageTitle= "";
+		};
+	}
+])
 .controller('EditorController',['$scope', '$firebase','$routeParams',
 	function($scope, $firebase,$routeParams) {
 		$scope.title = $routeParams.id;
+		$scope.type = $routeParams.type;
 		//$scope.text = "";
-		var pageref = new Firebase("https://sunyabroad.firebaseio.com/pages");
+		var pageref = new Firebase("https://sunyabroad.firebaseio.com/"+$scope.type);
 		$scope.pages = $firebase(pageref);
 		$scope.pages.$on('loaded', function() {
 
