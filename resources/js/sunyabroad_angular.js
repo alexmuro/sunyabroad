@@ -56,11 +56,14 @@ SAControllers.controller('MainController',['$scope',
 ])
 .controller('MenuController',['$scope', '$firebase','$routeParams',
 	function($scope, $firebase,$routeParams) {
+		$scope.currentMenu = '';
 		$scope.menuItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/menu"));
 		$scope.menuItems.$on('loaded',function(){
 			$scope.submenuItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/submenu"));
 			$scope.submenuItems.$on('loaded',function(){
+
 				keys = $scope.menuItems.$getIndex();
+				$scope.currentMenu = keys[0];
 				console.log('menu keys',keys);
 			});
 		});

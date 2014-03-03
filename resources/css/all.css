@@ -88,7 +88,7 @@ input, textarea, select {
 .top-menu {
 	margin: 0 0 0 0px;
 	padding: 0;
-	float: left;
+	float: right;
 }
 .top-menu li {
 	float: left;

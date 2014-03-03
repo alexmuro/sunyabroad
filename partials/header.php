@@ -19,19 +19,14 @@
                   my UALBANY
                 </a>
                 <ul class="top-menu">
+                   <li>
+                    <a href="http://www.albany.edu/">
+                      University Home 
+                    </a>
+                  </li>
                   <li>
                     <a href="http://www.albany.edu/directories.php?WT.source=home">
                       Directories
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.albany.edu/calendars.php?WT.source=home">
-                      Calendars &amp; Schedules
-                    </a>
-                  </li>
-                  <li>
-                    <a href="http://www.albany.edu/about/about_visiting.php?WT.source=home">
-                      Visit
                     </a>
                   </li>
                   <li>

@@ -10,11 +10,15 @@
     <!-- Core CSS - Include with every page -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    
     <!-- Page-Level Plugin CSS - Tables -->
     <link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/medium-editor.css">
+    
     <!-- SB Admin CSS - Include with every page -->
     <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Javascripts  -->
     <script src='js/medium-editor.js'></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
     <script src="js/angular-medium-editor.js"></script>
@@ -39,7 +43,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">Study Abroad CMS</a>
             </div>
-            <!-- /.navbar-header -->
+            <!-- /.navbar-header
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
@@ -69,15 +73,27 @@
                 <ul class="nav" id="side-menu">
                     
                     <li>
-                        <a href="#"><i class="fa fa-dashboard fa-edit"></i>Pages Editor</a>
+                        <a href="#"><i class="fa fa-dashboard fa-edit"></i> Pages</a>
                     </li>
                      <li>
-                        <a href="#"><i class="fa fa-dashboard fa-edit"></i>Student Prospectives</a>
+                        <a href="#"><i class="fa fa-home"></i> Blog</a>
                     </li>
-                     <li>
-                        <a href="#/menu"><i class="fa fa-dashboard fa-edit"></i>Site Menu</a>
+                    <li>
+                        <a href="#/menu"><i class="fa fa-list"></i> Menu</a>
                     </li>
-                    
+                    <li>
+                        <a href="#/menu"><i class="fa fa-camera-retro fa-edit"></i> Header Images</a>
+                    </li>
+                    <li>
+                        <a href="#/menu"><i class="fa fa-calendar fa-edit"></i> Calendar</a>
+                    </li>
+                    <li>
+                        <a href="#/menu"><i class="fa fa-camera"></i> Featured Photos</a>
+                    </li>
+                    <li>
+                        <a href="#/menu"><i class="fa fa-video-camera"></i> Featured Video</a>
+                    </li>
+                   
                     
                 </ul>
                 <!-- /#side-menu -->

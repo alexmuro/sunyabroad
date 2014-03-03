@@ -54,7 +54,6 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 			$scope.pages.$add({title: $scope.pageTitle,createdAt:new Date(),editedAt:new Date(),url:encodeURIComponent($scope.pageTitle.replaceAll(" ","_").toLowerCase().replaceAll("?","").replaceAll("&","and"))});
 			$scope.pageTitle= "";
 		};
-
 	}
 ])
 .controller('EditorController',['$scope', '$firebase','$routeParams',

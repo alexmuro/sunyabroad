@@ -289,9 +289,7 @@
               
             </script>
             
-            <a href="http://www.albany.edu/about/athletics.php?WT.source=home">
-              <img style="margin:-16px 0px 3px 0px;" src="resources/img/homepage_athletics_right_column_icon.png" alt="UAlbany Athletics">
-            </a>
+           
           </div>
       </div>
       <!-- sidebar -->
@@ -330,57 +328,15 @@
     </div>
     <!-- footer -->
     <div id="footer">
+      <img src="http://localhost/sunyabroad/resources/img/study_abroad_logo.jpg" style="width:250px;float:right" > 
       <address>
         <strong>
-          University at Albany
-        </strong>
-        , State University of New York · 1400 Washington Ave., · Albany, NY 12222 · Phone (518) 442-3300
+          University at Albany Office of Internation Education, Study Abroad &amp; Exchanges
+        </strong><br>
+        Science Library G40 · 1400 Washington Ave., · Albany, NY 12222 · Phone (518) 591-8170
+        <br><a href="mailto:studyabroad@albany.edu">studyabroad@albany.edu</a>
       </address>
-      <ul class="additional-menu">
-        <li>
-          <a href="http://www.albany.edu/contact.shtml">
-            Contact Us
-          </a>
-        </li>
-        <li>
-          <a href="http://www.albany.edu/main/employment.shtml">
-            Jobs
-          </a>
-        </li>
-        <li>
-          <a href="http://www.albany.edu/emergency/index.php">
-            SUNY NY-Alert
-          </a>
-        </li>
-        <li>
-          <a href="http://police.albany.edu/ASR.shtml">
-            Annual Security and Fire Safety Report
-          </a>
-        </li>
-        <li>
-          <a href="http://wiki.albany.edu/x/IR7-AQ">
-            Internet Privacy Policy
-          </a>
-        </li>
-        <li>
-          <a href="http://www.albany.edu/emergency/index.php">
-            UAlbany Alert
-          </a>
-        </li>
-        <li>
-          <a href="http://www.albany.edu/veterans/">
-            Veterans Affairs
-          </a>
-        </li>
-        <li>
-          <a href="https://wiki.albany.edu/display/middlestates/Home">
-            Middle States Self-Study
-          </a>
-        </li>
-      </ul>
-      <a href="http://www.albany.edu/gogreen/index.shtml?WT.source=home" class="green-label">
-        UAlbany is Green!
-      </a>
+
       
       <span>
         ©&nbsp;2014 University at Albany
