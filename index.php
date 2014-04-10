@@ -296,10 +296,11 @@
       <!-- sidebar -->
       <div id="sidebar">
         <!-- Getting Started BEGINS *********************************** -->
-        
+        <a href="/sunyabroad/">
         <div class="heading-block" style="background-image:url(&#39;http://www.albany.edu/hpfiles/assets/Getting-Started-at-UAlbany.png&#39;);">
           
         </div>
+        </a>
         <!-- Side Navigation -->
         
         <?php include 'partials/side_nav.php';?>

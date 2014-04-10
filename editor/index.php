@@ -14,19 +14,28 @@
     <!-- Page-Level Plugin CSS - Tables -->
     <link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/medium-editor.css">
+    <link rel="stylesheet" type="text/css" href="css/firepano.css">
+
     
     <!-- SB Admin CSS - Include with every page -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
     <!-- Javascripts  -->
-
+    <!-- Core Scripts - Include with every page -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="//cdn.firebase.com/v0/firebase.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+    <script src="js/sha256.js"></script>
+    <script src="js/firepano.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src='js/medium-editor.js'></script>
-     <script src="js/angular-medium-editor.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
     <script src='https://cdn.firebase.com/v0/firebase.js'></script>
     <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
-
+    
+    
+  
     <script src='js/angular-medium-editor.js'></script> 
     <script src='src/sunyabroad_cms.js'></script>
 </head>
@@ -117,10 +126,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- Core Scripts - Include with every page -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    
 
     <!-- Page-Level Plugin Scripts - Tables -->
     <script src="js/plugins/dataTables/jquery.dataTables.js"></script>

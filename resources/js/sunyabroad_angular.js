@@ -43,23 +43,55 @@ app.animation('.my-show-hide-animation', function() {
     }
   };
 });
+app.filter('startFrom', function() {
+    return function(input, start) {
+        start = +start; //parse to int
+        return input.slice(start);
+    }
+});
 
-
+app.filter('reverse', function() {
+      function toArray(list) {
+         var k, out = [];
+         if( list ) {
+            if( angular.isArray(list) ) {
+               out = list;
+            }
+            else if( typeof(list) === 'object' ) {
+               for (k in list) {
+                  if (list.hasOwnProperty(k)) { out.push(list[k]); }
+               }
+            }
+         }
+         return out;
+      }
+      return function(items) {
+         return toArray(items).slice().reverse();
+      };
+   });
 var SAControllers = angular.module('SAControllers', []);
 SAControllers.controller('MainController',['$scope','$firebase','$sce',
 	function($scope,$firebase,$sce) {
 		
+		$scope.currentPage = 0;
+	    $scope.pageSize = 3;
+	    $scope.data = [];
+	    $scope.keys = [];
+	    $scope.numberOfPages=function(){
+	        return Math.ceil($scope.keys.length/$scope.pageSize);                
+	    }
+
 		$scope.trustedHTML = {};
 		$scope.posts = $firebase(new Firebase("https://sunyabroad.firebaseio.com/posts"));
 		$scope.posts.$on('loaded',function(){
 			
-			var keys = $scope.posts.$getIndex();
-			keys.forEach(function(key, i) {
-				console.log($scope.posts[key].body);
-				$scope.post[key].body =  $sce.trustAsHtml($scope.posts[key].body);
+			$scope.keys = $scope.posts.$getIndex();
+			$scope.keys.forEach(function(key, i) {
 				
+				$scope.posts[key].trustedHTML =  $sce.trustAsHtml($scope.posts[key].body.replace(/<\/?span[^>]*>/g,""));
+				console.log($scope.posts[key].trustedHTML);
 			});
-			console.log($scope.trustedHTML);
+			
 		});
 		
 	}
@@ -80,7 +112,7 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce',
 				}
 			});
 			$scope.title = $scope.pages[current_page].title;
-			$scope.html_content = $scope.pages[current_page].body;
+			$scope.html_content = $scope.pages[current_page].body.replace(/<\/?span[^>]*>/g,"");
 			$scope.trustedHtml = $sce.trustAsHtml($scope.html_content);
 			console.log($scope.pages[current_page]);
 		});

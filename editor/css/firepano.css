@@ -1,0 +1,13 @@
+
+.hidden {
+  display: none;
+}
+
+.pano {
+  height: 85%;
+  max-height: 85%;
+}
+
+#spin {
+  height: 60px;
+}

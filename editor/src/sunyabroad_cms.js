@@ -84,7 +84,6 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 
 			$scope.title = $scope.pages[$routeParams.id].title;
 			$scope.html_content = $scope.pages[$routeParams.id].body;
-			console.log($scope.pages[$routeParams.id]);
 			$scope.savePage = function() {
 				
 				$scope.pages[$routeParams.id].body = $scope.html_content;
