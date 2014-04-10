@@ -30,8 +30,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="(key,page) in pages" class="odd gradeX">
-                            <td><a href="#/pages/{{key}}">{{page.title}}</a></td>
+                        <tr ng-repeat="(key,page) in posts" class="odd gradeX">
+                            <td><a href="#/edit/posts/{{key}}">{{page.title}}</a></td>
                             <td></td>
                             <td>{{page.createdAt | date:'short'}}</td>
                             <td >{{page.editedAt | date:'medium'}}</td>

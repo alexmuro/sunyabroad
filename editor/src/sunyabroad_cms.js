@@ -75,9 +75,11 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 	function($scope, $firebase,$routeParams) {
 		$scope.title = $routeParams.id;
 		$scope.type = $routeParams.type;
+		$scope.subtitle = '';
 		//$scope.text = "";
 		var pageref = new Firebase("https://sunyabroad.firebaseio.com/"+$scope.type);
 		$scope.pages = $firebase(pageref);
+
 		$scope.pages.$on('loaded', function() {
 
 			$scope.title = $scope.pages[$routeParams.id].title;
@@ -88,6 +90,7 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 				$scope.pages[$routeParams.id].body = $scope.html_content;
 				$scope.pages[$routeParams.id].title = $scope.title;
 				$scope.pages[$routeParams.id].url = encodeURIComponent($scope.title.replaceAll(" ","_").toLowerCase().replaceAll("?","").replaceAll("&","and"));
+				$scope.pages[$routeParams.id].subtitle = $scope.subtitle;
 				$scope.pages.$save($routeParams.id);
 				console.log($scope.pages[$routeParams.id]);
 			};

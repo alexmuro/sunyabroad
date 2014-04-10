@@ -30,16 +30,15 @@
 </h2>
 <!-- news block -->
 <ul class="news-block">
-  <li ng-repeat="story in content">
+  <li ng-repeat="(key,post) in posts | orderByPriority">
     <div>
-      <img ng-src="{{story.img}}" width="163" height="112">
+      <img ng-src="{{post.img}}" width="163" height="112">
     </div>
     <div class="text-place">
-      <strong class="subject" style="text-transform:uppercase;">{{story.program}}</strong>
-      <h3><a href="{{story.url}}+'"><p>{{story.title}}</p>
-      </a></h3>
+      <strong class="subject" style="text-transform:uppercase;">{{post.subtitle}}</strong>
+      <h3><a href="{{post.url}}+'"><p>{{post.title}}</p></a></h3>
       <p></p>
-      <p>{{story.content}}<p></p>
+      <p><div ng-bind-html="post.body" style="font-size:1.4em"></div><p></p>
       </div>
   </li>
   <!-- gets content dynamically -->
