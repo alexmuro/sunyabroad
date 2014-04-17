@@ -3,7 +3,8 @@ var app = angular.module('sunyabroad_cms',
 		'firebase',
 		'ngRoute',
 		'CMSControllers',
-		'angular-medium-editor'
+		'angular-medium-editor',
+		'ui.bootstrap'
 	]
 );
 app.directive('ngModelOnblur', function() {
@@ -38,6 +39,14 @@ app.config(['$routeProvider',
         templateUrl: 'partials/menu.html',
         controller: 'MenuController'
       })
+      .when('/headers', {
+        templateUrl: 'partials/header_images.html',
+        controller: 'HeaderController'
+      })
+      .when('/calendar', {
+        templateUrl: 'partials/calendar.html',
+        controller: 'CalendarController'
+      })
       .when('/edit/:type/:id', {
         templateUrl: 'partials/editor.html',
         controller: 'EditorController'
@@ -71,6 +80,17 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 		};
 	}
 ])
+.controller('CalendarController',['$scope', '$firebase',
+	function($scope, $firebase) {
+		$('#newPost').hide();
+		$scope.posts = $firebase(new Firebase("https://sunyabroad.firebaseio.com/calendar"));
+		$scope.addPage = function(e) {
+		if (e.keyCode != 13) return;
+			$scope.posts.$add({title: $scope.pageTitle,createdAt:new Date(),editedAt:'',url:encodeURIComponent($scope.pageTitle.replaceAll(" ","_").toLowerCase().replaceAll("?","").replaceAll("&","and"))});
+			$scope.pageTitle= "";
+		};
+	}
+])
 .controller('EditorController',['$scope', '$firebase','$routeParams',
 	function($scope, $firebase,$routeParams) {
 		$scope.title = $routeParams.id;
@@ -79,22 +99,53 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 		//$scope.text = "";
 		var pageref = new Firebase("https://sunyabroad.firebaseio.com/"+$scope.type);
 		$scope.pages = $firebase(pageref);
+		$scope.today = function() {
+    		$scope.dt = new Date();
+  		};
+  		$scope.today();
+	  	$scope.open = function($event) {
+	    	$event.preventDefault();
+	    	$event.stopPropagation();
+
+	    	$scope.opened = true;
+	  	};
+
 
 		$scope.pages.$on('loaded', function() {
 
 			$scope.title = $scope.pages[$routeParams.id].title;
 			$scope.html_content = $scope.pages[$routeParams.id].body;
+			$scope.img = $scope.pages[$routeParams.id].img;
+			$scope.eventDate = $scope.pages[$routeParams.id].editedAt;
 			$scope.savePage = function() {
 				
 				$scope.pages[$routeParams.id].body = $scope.html_content;
 				$scope.pages[$routeParams.id].title = $scope.title;
 				$scope.pages[$routeParams.id].url = encodeURIComponent($scope.title.replaceAll(" ","_").toLowerCase().replaceAll("?","").replaceAll("&","and"));
 				$scope.pages[$routeParams.id].subtitle = $scope.subtitle;
+				$scope.pages[$routeParams.id].img = $scope.img;
+				$scope.pages[$routeParams.id].editedAt = $scope.eventDate;
 				$scope.pages.$save($routeParams.id);
 				console.log($scope.pages[$routeParams.id]);
 			};
 		});
-	}
+		document.getElementById("file-upload").addEventListener('change', handleFileSelect, false);
+		function handleFileSelect(evt) {
+		  
+		  var f = evt.target.files[0];
+		  var reader = new FileReader();
+		  reader.onload = (function(theFile) {
+		    return function(e) {
+		      $scope.img =  e.target.result;
+		      document.getElementById("pano").src = e.target.result;
+		    };
+		  })(f);
+		  reader.readAsDataURL(f);
+		}
+		
+
+
+	}	
 ])
 .controller('MenuController',['$scope', '$firebase','$routeParams',
 	function($scope, $firebase,$routeParams) {
@@ -233,8 +284,93 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 			});
 		}
 	}
-]);
+])
+.controller('HeaderController',['$scope', '$firebase','$routeParams',
+	function($scope, $firebase,$routeParams) {
+		$('#newMenuItem').hide();
+		$scope.headerItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/headerImage"));
+		$scope.headerItems.$on('loaded',function(){
 
+			var keys = $scope.headerItems.$getIndex();
+			
+			$scope.currentOrder = $scope.getCurrentIndex();
+			$scope.addHeader = function() {
+				$scope.headerItems.$add({img: $scope.img,createdAt:new Date(),editedAt:new Date(),$priority:$scope.getCurrentIndex()+1});
+				$scope.currentOrder = $scope.getCurrentIndex()+1;
+				$('#newMenuItem').hide()
+				
+			};
+
+		});
+		
+		$scope.getCurrentIndex = function(){
+			currentOrder = 0;
+			var keys = $scope.headerItems.$getIndex();
+			keys.forEach(function(key, i) {
+				if(typeof $scope.headerItems[key] != 'undefined'){
+					if($scope.headerItems[key].$priority >= currentOrder){
+						currentOrder = $scope.headerItems[key].$priority;
+					}
+				}
+			});
+			return currentOrder;
+		};
+		$scope.deleteItem = function(key){
+			
+			var current_val = $scope.headerItems[key].$priority;
+			keys = $scope.headerItems.$getIndex();
+			keys.forEach(function(dex, i) {
+				if($scope.headerItems[dex].$priority >= current_val){
+					$scope.headerItems[dex].$priority--;
+				}
+			});
+			$scope.currentOrder--;
+			$scope.headerItems.$save().then(function(){
+				$scope.headerItems.$remove(key);
+			});
+		};
+		$scope.moveDown = function (key){
+				
+				var current_val = $scope.headerItems[key].$priority+1;
+				keys = $scope.headerItems.$getIndex();
+				keys.forEach(function(dex, i) {
+					if($scope.headerItems[dex].$priority == current_val){
+						$scope.headerItems[dex].$priority--;
+						$scope.headerItems[key].$priority++;
+					}
+				});
+			$scope.headerItems.$save();
+		};
+
+		$scope.moveUp = function(key){
+
+				var current_val = $scope.headerItems[key].$priority-1;
+				keys = $scope.headerItems.$getIndex();
+				keys.forEach(function(dex, i) {
+					if($scope.headerItems[dex].$priority == current_val){
+						$scope.headerItems[dex].$priority++;
+						$scope.headerItems[key].$priority--;
+					}
+				});
+			$scope.headerItems.$save();
+		};
+
+
+		document.getElementById("file-upload").addEventListener('change', handleFileSelect, false);
+		function handleFileSelect(evt) {
+		  
+		  var f = evt.target.files[0];
+		  var reader = new FileReader();
+		  reader.onload = (function(theFile) {
+		    return function(e) {
+		      $scope.img =  e.target.result;
+		      document.getElementById("pano").src = e.target.result;
+		    };
+		  })(f);
+		  reader.readAsDataURL(f);
+		}
+}
+]);
 String.prototype.replaceAll = function (sfind, sreplace) {
      var str = this;
     while (str.indexOf(sfind)>-1) str=str.replace(sfind, sreplace);

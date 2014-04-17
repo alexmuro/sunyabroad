@@ -97,27 +97,12 @@
             <div class="mask">
               <!-- Homepage homepage_banner_list BEGIN -->
               
-              <ul id="hpbanners_list">
+              <ul id="hpbanners_list" ng-controller="HeaderController">
                 
-                <li style="display:block;">
-                  <img src="resources/img/chile_header.jpg" alt="UAlbany Students">
+                <li style="display:block;" ng-repeat='item in headerItems |  orderByPriority'>
+                  <img ng-src="{{item.img}}">
                 </li>
-                <li style="display:block;">
-                  <img src="resources/img/homepage_banner-alumni-october-2013.jpg" alt="Graduates">
-                </li>
-                
-                <li style="display:block;">
-                  <img src="resources/img/homepage_banner_science_hub_biology.jpg" alt="A hub for new ideas">
-                </li>
-                <li style="display:block;">
-                  <img src="resources/img/homepage_banner_graduate.jpg" alt="Graduate">
-                </li>
-                <li style="display:block;">
-                  <img src="resources/img/homepage_banner_value_minerva.jpg" alt="Excellence at a great value">
-                </li>
-                <li style="display:block;">
-                  <img src="resources/img/homepage_banner_global_students.jpg" alt="Global Perspective">
-                </li>
+               
               </ul>
               
               <!-- Homepage homepage_banner_list Ends -->

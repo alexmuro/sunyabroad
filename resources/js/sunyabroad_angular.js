@@ -112,6 +112,7 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce',
 				}
 			});
 			$scope.title = $scope.pages[current_page].title;
+			$scope.img = $scope.pages[current_page].img;
 			$scope.html_content = $scope.pages[current_page].body.replace(/<\/?span[^>]*>/g,"");
 			$scope.trustedHtml = $sce.trustAsHtml($scope.html_content);
 			console.log($scope.pages[current_page]);
@@ -140,6 +141,24 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce',
 			}
 			return false;
 		};
+	}
+])
+.controller('HeaderController',['$scope', '$firebase','$routeParams',
+	function($scope, $firebase,$routeParams) {
+		$scope.headerItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/headerImage"));
+		$scope.headerItems.$on('loaded',function(){
+			initCarousel();
+		});
+
+	}
+])
+.controller('CalendarController',['$scope', '$firebase','$routeParams',
+	function($scope, $firebase,$routeParams) {
+		$scope.calItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/calendar"));
+		$scope.calItems.$on('loaded',function(){
+			
+		});
+
 	}
 ]);
 

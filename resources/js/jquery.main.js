@@ -2,7 +2,7 @@
 $(function(){
 	initBlocksHeight();
 	initInputs();
-	initCarousel();
+	
 });
 
 

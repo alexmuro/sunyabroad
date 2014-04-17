@@ -314,14 +314,23 @@
             CALENDAR
           </h2>
           
-          <ul>
-            
+          <ul ng-controller='CalendarController'>
+            <li ng-repeat='item in calItems'>
+              <span style="margin-left:5px;font-size:16px;line-height:16px;color:#9e0f0f;">
+                  {{item.editedAt | date:'MMMM d'}}
+              </span>
+              <div class="info" style="margin-left: 24px;">
+                <img ng-show="item.img" ng-src="{{item.img}}" style="width:154px;height:120px;">
+                 <strong class="title">
+                    <p>{{item.title}}</p>
+                </strong>
+                {{item.body}}
+              </div>
+            </li> 
             
           </ul>
           
-          <a href="http://www.albany.edu/news/calendar.shtml?WT.source=home" class="more-link">
-            SEE ALL EVENTS AT UALBANY'S EVENTS CALENDAR
-          </a>
+          
           
         </div>
         <!-- END DIV calendar -->
@@ -330,7 +339,7 @@
     </div>
     <!-- footer -->
     <div id="footer">
-      <img src="http://localhost/sunyabroad/resources/img/study_abroad_logo.jpg" style="width:250px;float:right" > 
+      <img src="resources/img/study_abroad_logo.jpg" style="width:250px;float:right" > 
       <address>
         <strong>
           University at Albany Office of Internation Education, Study Abroad &amp; Exchanges

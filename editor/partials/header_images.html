@@ -1,0 +1,47 @@
+<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Headers</h1>
+                    <a onclick="$('#newMenuItem').show()">Add New Header Image</a>
+                    <div class="form-group" id="newMenuItem">
+                    <input type="file" accept="image/*" capture="camera" id="file-upload">
+                    <br/>
+                    <img class="pano" id="pano" ng-src='{{img}}' />
+                    <a ng-click="addHeader()">Save.</a>
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Image</th>
+                            <th>Created At</th>
+                            <th>Delete</th>                            
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in headerItems| orderByPriority">
+                        <tr class="odd gradeX" ng-hide="">
+                            <td><i ng-click="moveUp(item.$id)" ng-hide="item.$priority == 1" class="fa fa-sort-desc fa-4 fa-hover"></i><br><i ng-click="moveDown(item.$id)" ng-hide="item.$priority == currentOrder" class="fa fa-5 fa-sort-asc fa-hover"></i><br>
+                                {{item.$priority}}</td>
+                            <td><img ng-src="{{item.img}}" class="col-lg-12 clearInput"></td>
+                            <td>{{item.createdAt | date:'short'}}</td>
+                            <td class="center"><i ng-click="deleteItem(item.$id)" class="fa fa-minus-circle"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<!-- /.col-lg-12 -->
+</row>

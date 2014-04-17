@@ -23,13 +23,14 @@
     <!-- Javascripts  -->
     <!-- Core Scripts - Include with every page -->
     <script src="js/jquery-1.10.2.js"></script>
-    <script src="//cdn.firebase.com/v0/firebase.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+    <script src="//cdn.firebase.com/v0/firebase.js"></script>
     <script src="js/sha256.js"></script>
     <script src="js/firepano.js"></script>
     <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src='js/medium-editor.js'></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+    <script src="js/angular-bootstrap.tpl.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
     <script src='https://cdn.firebase.com/v0/firebase.js'></script>
     <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>

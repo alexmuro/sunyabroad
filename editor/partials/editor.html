@@ -2,11 +2,23 @@
                 <div class="col-lg-12">
                     <h1 class="page-header"><input type="text" ng-model="title" style="border:none;"><a class="btn" ng-click="savePage()">Save</a> </h1>
                     <h2 ng-show="type == 'posts'"><input type="text" ng-model="subtitle" class="col-lg-12" style="border:none;" placeholder="Subtitle"></h2>
-                    <a ng-href="#/{{type}}">Back</a>
+                    <strong><a ng-href="#/{{type}}">Back</a></strong>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+             <div class="row" ng-show="type == 'calendar'" style='margin-top:20px'>  
+        <div class='col-md-1'> <label>Event Date</label></div>
+        <div class="col-md-6">
+            <p class="input-group">
+
+              <input type="text" ng-model="eventDate" class="form-control" datepicker-popup="shortDate" ng-model="dt" is-open="opened" min="minDate" max="'2015-06-22'" close-text="Close" />
+              <span class="input-group-btn">
+                <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
             <div class="row">
 <div class="col-lg-12">
     
@@ -21,11 +33,11 @@
             </form>
         </div>
         <div class="well">
-              <div id="spin"></div>
-              <h1>Firepano</h1>
-              <input class="hidden" type="file" accept="image/*" capture="camera" id="file-upload">
+              <h1>Upload Image</h1>
+              <input type="file" accept="image/*" capture="camera" id="file-upload">
               <br/>
-              <img class="pano" id="pano" />
+              <img class="pano" id="pano" ng-src='{{img}}' />
+              
 
         </div>
         <!-- /.panel-body -->
