@@ -6,4 +6,5 @@ $(function(){
 		$('.current_menu').removeClass('current_menu').hide("500");
 		$(this).find('.side_sub').addClass("current_menu").show("500");
 	});
+	loadMap ();
 });

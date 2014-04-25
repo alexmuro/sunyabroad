@@ -1,6 +1,5 @@
 function loadMap (){
-	
-	//google.setOnLoadCallback(drawVisualization);
+	google.setOnLoadCallback(drawVisualization);
 };
 
 function drawVisualization() {
@@ -1306,10 +1305,13 @@ function drawVisualization() {
         if (svgbg[0]) {
             if (region == 'world' || region == '005') {
                 if (region == 'world') {
-                    svgbg[0].style.backgroundImage = "url('images/antarctica.png')";
+                    svgbg[0].style.backgroundImage = "url('http://www.albany.edu/studyabroad/images/antarctica.png')";
+                    svgbg[0].style['background-size'] = "520px 400px";
                 }
+
                 if (region == '005') {
-                    svgbg[0].style.backgroundImage = "url('images/peninsula.png')";
+                    svgbg[0].style.backgroundImage = "url('http://www.albany.edu/studyabroad/images/peninsula.png')";
+                    svgbg[0].style['background-size'] = "520px 400px";
                 }
             } else {
                 svgbg[0].style.backgroundImage = "none";

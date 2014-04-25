@@ -14,6 +14,9 @@
     <script type="text/javascript" src="resources/js/accordian.js"></script>
     <script type="text/javascript" src="resources/js/content.js"></script>
     <script type='text/javascript' src='http://www.google.com/jsapi'></script>
+    <script>
+      google.load('visualization', '1', {'packages': ['geochart']});
+    </script>
     <script type="text/javascript" src="resources/js/interactive_map.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
@@ -21,12 +24,13 @@
     <script src='https://cdn.firebase.com/v0/firebase.js'></script>
     <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
     <script src='resources/js/sunyabroad_angular.js'></script>  
+
     <!-- Begin Mobile Detection Scripts -->
   </head>
 
   <body>
   <!-- wrapper block -->
-  <div id="page">
+  <div id="page" ng-controller="behaviorController">
     
     <!-- holding block -->
     <div id="wrapper">
@@ -35,6 +39,35 @@
     <div id="main">
       <div id="twocolumns">
         <div id="content" style="padding-bottom:100px;">
+          <span id="mapstuff" ng-show="mainPage">
+          <h2>
+            Interactive Program Map
+          </h2>
+          <div class="text_map" style="margin-bottom: 20px;">
+            <div id="imapfilters">Program Term: 
+              <select name="programterm" id="programterm" onChange="drawVisualization()">
+                <option value="all" selected>All Programs</option>
+                <option value="sem">Semester Length Programs</option>
+                <option value="sum">Summer Length Programs</option>
+                <option value="win">Winter Session Programs</option>
+              </select>
+              Region:
+              <select name="regionmap" id="regionmap" onChange="drawVisualization()">
+                <option value="world" selected>World</option>
+                <option value="002">Africa</option>
+                <option value="019">Americas</option>
+                <option value="021">North America</option>
+                <option value="013">Central America</option>
+                <option value="005">South America</option>
+                <option value="029">The Caribbean</option>
+                <option value="142">Asia</option>
+                <option value="150">Europe</option>
+                <option value="145">Middle East</option>
+              </select></div> 
+              <div id='visualization'></div>
+              <div id='imapmessage'>Click each location for more information</div>
+          </div>
+          </span>
           <div ng-view></div>
         </div>
           <!-- RIGHT COLUMN BEGINS -->
@@ -106,128 +139,25 @@
               
             </div>
             <!-- DIV social-media-icons ENDS -->
-            <div class="box">
-              <h2>
-                PHOTOS of the DAY
-              </h2>
-              <div class="small-gallery">
-                <div class="mask">
-                  <!-- Photo of the Day List - vNov2012 Thursday, January 09, 2014 5:00 PM GUID is 27695 -->
-                  <ul>
-                    
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#1?WT.source=home&title=Best of 2013: Solitary Studytime">
-                        <img src="resources/img/library_study_homepage2013.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#2?WT.source=home&title=Best of 2013: Podium Pyramid">
-                        <img src="resources/img/Podium_Pyramid_homepage2013.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#3?WT.source=home&title=Best of 2013: Ongoing Research">
-                        <img src="resources/img/LS_lab_microscope_homepage2013.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#4?WT.source=home&title=Best of 2013: Great Dane Project">
-                        <img src="resources/img/dane_dogs_homepage2013.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#5?WT.source=home&title=Best of 2013: Cutting-edge Research">
-                        <img src="resources/img/BioScience_homepage2013.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#6?WT.source=home&title=Best of 2013: Body in Motion">
-                        <img src="resources/img/movement_class_homepage2013.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#7?WT.source=home&title=Best of 2013:  Fountain at Night">
-                        <img src="resources/img/CC_Fountain_nightime_0793_homepage2013.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#8?WT.source=home&title=Best of 2013: Artistic Process">
-                        <img src="resources/img/sculpturestudent_8285_homepage2013.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#9?WT.source=home&title=UAlbany Blooms">
-                        <img src="resources/img/orchids_9325_homepage.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#10?WT.source=home&title=Wintery Podium">
-                        <img src="resources/img/snowpodium_1302_homepage.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#11?WT.source=home&title=Great Dane Travail">
-                        <img src="resources/img/mens_basketball_colgate_homepage.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                    <li>
-                      
-                      <a class="potd_link" href="http://www.albany.edu/gallery/?WT.source=home#12?WT.source=home&title=Twilight Business">
-                        <img src="resources/img/BusSchool_night_homepage.jpg" class="potd_pic">
-                      </a>
-                    </li>
-                    
-                  </ul>
-                  
-                  <div class="control-block">
-                    
-                    <a href="http://www.albany.edu/gallery/?WT.source=home">
-                      SEE ALL
-                    </a>
-                    <div class="holder">
-                      <a href="http://www.albany.edu/#" class="next">
-                        next
-                      </a>
-                      
-                      <a href="http://www.albany.edu/#" class="prev">
-                        previous
-                      </a>
-                      <div class="counter">
-                        <span class="cur-num">
-                          1
-                        </span>
-                        of 
-                        <span class="all-num">
-                          12
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+            <div id="research_and_business" class="box">
+            <h2>Resources</h2>
+            
+            <div>
+
+              <ul style="margin-bottom: 60px;" class="additional-links">
+                <li><a href="#/pages/how_to_use_the_interactive_map">How To Use Interactive Map</a></li>
+                 <li><a href="pdf/forms/GenInfoHdbk WIN &amp; SP 09.pdf" target="_blank">Student Handbook</a></span>
+                           <li><a href="http://www.albany.edu/intled/saebios.shtml">About Us</a></span></li>
+                           <li><a href="http://www.albany.edu/international">UAlbany International Education</a></span></li>
+                           <li><a href="http://www.albany.edu/isss">International Student &amp; Scholar Services</a></span></li>
+                           <li><a href="http://www.albany.edu/ielp">Intensive English Language Program</a></span></li>
+                          <li>Need data about Study Abroad at UAlbany?<br></li>
+                          <li><a href="pdf/reports/Annual Study Abroad Report 2011-2012 with summary.pdf" target="_blank">Study Abroad Annual Report 2011-12</a><br></li>
+                          <li><a href="pdf/reports/Annual Study Abroad Report 2012-2013 with summary.pdf" target="_blank">Study Abroad Annual Report 2012-13</a></span></li> 
+              </ul>
+            
+            </div>          
             </div>
             <div class="box">
               <h2>
@@ -270,7 +200,12 @@
                 </div>
               </div>
             </div>
-            
+            <div class="box">
+              <h2>
+                PHOTOS of the DAY
+              </h2>
+              <?php include 'partials/photos.html'; ?>
+            </div>
             
             
             <script>
@@ -308,31 +243,7 @@
         <!-- Getting Started ******************************************************************* ENDS -->
         
         <!-- calendar -->
-        <div class="calendar">
-          
-          <h2>
-            CALENDAR
-          </h2>
-          
-          <ul ng-controller='CalendarController'>
-            <li ng-repeat='item in calItems'>
-              <span style="margin-left:5px;font-size:16px;line-height:16px;color:#9e0f0f;">
-                  {{item.editedAt | date:'MMMM d'}}
-              </span>
-              <div class="info" style="margin-left: 24px;">
-                <img ng-show="item.img" ng-src="{{item.img}}" style="width:154px;height:120px;">
-                 <strong class="title">
-                    <p>{{item.title}}</p>
-                </strong>
-                {{item.body}}
-              </div>
-            </li> 
-            
-          </ul>
-          
-          
-          
-        </div>
+        <?php include 'partials/calendar.php'; ?>
         <!-- END DIV calendar -->
         
       </div>

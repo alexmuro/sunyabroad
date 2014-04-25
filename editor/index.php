@@ -94,13 +94,13 @@
                         <a href="#/menu"><i class="fa fa-list"></i> Menu</a>
                     </li>
                     <li>
-                        <a href="#/headers"><i class="fa fa-camera-retro fa-edit"></i> Header Images</a>
+                        <a href="#/images/header"><i class="fa fa-camera-retro fa-edit"></i> Header Images</a>
                     </li>
                     <li>
                         <a href="#/calendar"><i class="fa fa-calendar fa-edit"></i> Calendar</a>
                     </li>
                     <li>
-                        <a href="#/photos"><i class="fa fa-camera"></i> Featured Photos</a>
+                        <a href="#/images/featured"><i class="fa fa-camera"></i> Featured Photos</a>
                     </li>
                     <li>
                         <a href="#/video"><i class="fa fa-video-camera"></i> Featured Video</a>

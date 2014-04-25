@@ -23,7 +23,6 @@ app.config(['$routeProvider',
       });
   }]);
 app.animation('.my-show-hide-animation', function() {
-	console.log('helo');
   return {
     beforeAddClass : function(element, className, done) {
       if(className == 'ng-hide') {
@@ -67,9 +66,18 @@ app.filter('reverse', function() {
       }
       return function(items) {
          return toArray(items).slice().reverse();
-      };
+      };behaviorController
    });
 var SAControllers = angular.module('SAControllers', []);
+SAControllers.controller('behaviorController',['$scope','$route',
+	function($scope,$route) {
+		$scope.mainPage = true;
+		$scope.$on('$routeChangeSuccess', function (ev, current, prev) {
+		   $scope.mainPage = $route.current.loadedTemplateUrl == "partials/main.php";
+		});
+		
+	}
+]);
 SAControllers.controller('MainController',['$scope','$firebase','$sce',
 	function($scope,$firebase,$sce) {
 		
@@ -89,7 +97,6 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce',
 			$scope.keys.forEach(function(key, i) {
 				
 				$scope.posts[key].trustedHTML =  $sce.trustAsHtml($scope.posts[key].body.replace(/<\/?span[^>]*>/g,""));
-				console.log($scope.posts[key].trustedHTML);
 			});
 			
 		});
@@ -129,7 +136,6 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce',
 
 				keys = $scope.menuItems.$getIndex();
 				$scope.currentMenu = keys[0];
-				console.log('menu keys',keys);
 			});
 		});
 		$scope.setMenu = function(key){
@@ -152,11 +158,34 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce',
 
 	}
 ])
-.controller('CalendarController',['$scope', '$firebase','$routeParams',
+.controller('PhotosController',['$scope', '$firebase','$routeParams',
 	function($scope, $firebase,$routeParams) {
-		$scope.calItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/calendar"));
-		$scope.calItems.$on('loaded',function(){
+		$scope.photos = $firebase(new Firebase("https://sunyabroad.firebaseio.com/featuredImage"));
+		$scope.photos.$on('loaded',function(){
 			
+		});
+
+	}
+])
+.controller('CalendarController',['$scope', '$firebase','$routeParams','$sce',
+	function($scope, $firebase,$routeParams,$sce) {
+		$scope.calItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/calendar"));
+		$scope.displayItems = [];
+		var today = new Date();
+		$scope.calItems.$on('loaded',function(){
+			var keys = $scope.calItems.$getIndex();
+			keys.forEach(function(key, i) {
+				
+				$scope.html_content = $scope.calItems[key].body.replace(/<\/?span[^>]*>/g,"");
+				$scope.calItems[key].html = $sce.trustAsHtml($scope.html_content);
+				if(new Date($scope.calItems[key].editedAt).valueOf() > today.valueOf()){
+					$scope.displayItems.push($scope.calItems[key]);
+				}
+			});
+			$scope.displayItems.sort(function(a,b){
+			  return new Date(b.editedAt) - new Date(a.editedAt);
+			});
+			$scope.displayItems.reverse();
 		});
 
 	}

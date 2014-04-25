@@ -52,8 +52,8 @@
                     <input name="siteurl" type="hidden" value="www.albany.edu/">
                     <input name="ref" type="hidden" value="">
                     <input name="ss" type="hidden" value="">
-                  </form>
-                  <script type="text/javascript" src="resources/img/brand">
+                  </form>s
+                  <script type="text/javascript" src=c"resources/img/brand">
                   </script>
                   
                 </div>

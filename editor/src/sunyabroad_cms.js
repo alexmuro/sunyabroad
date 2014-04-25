@@ -39,7 +39,7 @@ app.config(['$routeProvider',
         templateUrl: 'partials/menu.html',
         controller: 'MenuController'
       })
-      .when('/headers', {
+      .when('/images/:type', {
         templateUrl: 'partials/header_images.html',
         controller: 'HeaderController'
       })
@@ -288,7 +288,12 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 .controller('HeaderController',['$scope', '$firebase','$routeParams',
 	function($scope, $firebase,$routeParams) {
 		$('#newMenuItem').hide();
-		$scope.headerItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/headerImage"));
+		$scope.type = $routeParams['type'];
+		$scope.title = "Featued Images"
+		if($scope.type == 'header'){
+			$scope.title = 'headers';
+		}
+		$scope.headerItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/"+$scope.type+"Image"));
 		$scope.headerItems.$on('loaded',function(){
 
 			var keys = $scope.headerItems.$getIndex();
