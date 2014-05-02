@@ -30,7 +30,7 @@
 
   <body ng-cloak>
   <!-- wrapper block -->
-  <div id="page" ng-controller="behaviorController">
+  <div id="page" ng-controller="behaviorController" ng-cloak class="ng-cloak">
     
     <!-- holding block -->
     <div id="wrapper">
@@ -68,7 +68,7 @@
               <div id='imapmessage'>Click each location for more information</div>
           </div>
           </span>
-          <div ng-view></div>
+          <div ng-view ng-cloak class="ng-cloak"></div>
         </div>
           <!-- RIGHT COLUMN BEGINS -->
           

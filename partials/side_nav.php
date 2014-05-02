@@ -1,5 +1,5 @@
 
-<ul class="side-menu" ng-controller="MenuController">
+<ul class="side-menu" ng-controller="MenuController" ng-cloak class="ng-cloak">
 
   <li class="side-head" ng-repeat="item in menuItems| orderByPriority">
     <a ng-click="setMenu(item.$id)" ng-href="{{item.url}}">
