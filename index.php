@@ -28,7 +28,7 @@
     <!-- Begin Mobile Detection Scripts -->
   </head>
 
-  <body>
+  <body ng-cloak>
   <!-- wrapper block -->
   <div id="page" ng-controller="behaviorController">
     
