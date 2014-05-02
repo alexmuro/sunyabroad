@@ -17,6 +17,7 @@
     <script>
       google.load('visualization', '1', {'packages': ['geochart']});
     </script>
+    <script type="text/javascript" src="resources/js/content.js"></script>
     <script type="text/javascript" src="resources/js/interactive_map.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>

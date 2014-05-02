@@ -169,15 +169,15 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce','postsFb'
 		// Menu Item Shite
 		//------------------------------------------------------------------
 		$scope.currentMenu = '';
-		$scope.menuItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/menu"));
-		$scope.menuItems.$on('loaded',function(){
-			$scope.submenuItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/submenu"));
-			$scope.submenuItems.$on('loaded',function(){
+		console.log(content);
+		$scope.menuItems = content.menuItems;
+		$scope.submenuItems = content.submenuItems;
+		
 
-				keys = $scope.menuItems.$getIndex();
-				$scope.currentMenu = keys[0];
-			});
-		});
+		var keys = [];
+		for(var k in $scope.menuItems) keys.push(k);
+		$scope.currentMenu = keys[0];
+		
 		$scope.setMenu = function(key){
 			$scope.currentMenu = key;
 		};
