@@ -1002,3 +1002,6 @@ text-align: left;
 	font-size: normal;
 	font-weight: normal;
 }
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}

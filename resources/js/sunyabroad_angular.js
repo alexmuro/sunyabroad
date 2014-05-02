@@ -12,7 +12,12 @@ app.config(['$routeProvider',
     $routeProvider.
       when('/', {
         templateUrl: 'partials/main.php',
-        controller: 'MainController'
+        controller: 'MainController',
+        resolve: {
+		    loadPosts:  function(postsFb) {
+		      return postsFb.promiseToHavePosts();
+		    }  
+		},
       }).
       when('/pages/:id', {
         templateUrl: 'partials/page.html',
@@ -22,6 +27,41 @@ app.config(['$routeProvider',
         redirectTo: '/'
       });
   }]);
+app.factory('postsFb', function($firebase, $q) {
+  return {
+    posts: null,
+    menuItems: null,
+    promiseToHavePosts: function() {
+      var deferred = $q.defer();
+
+      if (this.posts === null) {
+        this.posts = $firebase(new Firebase("https://sunyabroad.firebaseio.com/posts"));
+        this.posts.$on('loaded', function(loadedData) {
+          deferred.resolve();
+        });
+      }
+      else {
+        deferred.resolve();
+      }
+
+      return deferred.promise;
+    },
+   	promiseToHaveMenuItems : function(){
+   	  var deferred = $q.defer();
+
+      if (this.posts === null) {
+        this.posts = $firebase(new Firebase("https://sunyabroad.firebaseio.com/menu"))
+        this.posts.$on('loaded', function(loadedData) {
+          deferred.resolve();
+        });
+      }
+      else {
+        deferred.resolve();
+      }
+      return deferred.promise
+   	}
+  };
+});
 app.animation('.my-show-hide-animation', function() {
   return {
     beforeAddClass : function(element, className, done) {
@@ -78,8 +118,8 @@ SAControllers.controller('behaviorController',['$scope','$route',
 		
 	}
 ]);
-SAControllers.controller('MainController',['$scope','$firebase','$sce',
-	function($scope,$firebase,$sce) {
+SAControllers.controller('MainController',['$scope','$firebase','$sce','postsFb',
+	function($scope,$firebase,$sce,postsFb) {
 		
 		$scope.currentPage = 0;
 	    $scope.pageSize = 3;
@@ -90,16 +130,13 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce',
 	    }
 
 		$scope.trustedHTML = {};
-		$scope.posts = $firebase(new Firebase("https://sunyabroad.firebaseio.com/posts"));
-		$scope.posts.$on('loaded',function(){
-			
-			$scope.keys = $scope.posts.$getIndex();
-			$scope.keys.forEach(function(key, i) {
-				
-				$scope.posts[key].trustedHTML =  $sce.trustAsHtml($scope.posts[key].body.replace(/<\/?span[^>]*>/g,""));
-			});
-			
+		$scope.posts = postsFb.posts;
+		$scope.keys = $scope.posts.$getIndex();
+		$scope.keys.forEach(function(key, i) {
+			$scope.posts[key].trustedHTML =  $sce.trustAsHtml($scope.posts[key].body.replace(/<\/?span[^>]*>/g,""));
 		});
+			
+		
 		
 	}
 ])
@@ -128,6 +165,9 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce',
 ])
 .controller('MenuController',['$scope', '$firebase','$routeParams',
 	function($scope, $firebase,$routeParams) {
+		//------------------------------------------------------------------
+		// Menu Item Shite
+		//------------------------------------------------------------------
 		$scope.currentMenu = '';
 		$scope.menuItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/menu"));
 		$scope.menuItems.$on('loaded',function(){
@@ -147,6 +187,7 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce',
 			}
 			return false;
 		};
+
 	}
 ])
 .controller('HeaderController',['$scope', '$firebase','$routeParams',
