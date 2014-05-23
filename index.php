@@ -14,6 +14,7 @@
     <script type="text/javascript" src="resources/js/accordian.js"></script>
     <script type="text/javascript" src="resources/js/content.js"></script>
     <script type="text/javascript" src="resources/js/menu.js"></script>
+    <script type="text/javascript" src="resources/js/resources.js"></script>
     <script type='text/javascript' src='http://www.google.com/jsapi'></script>
     <script>
       google.load('visualization', '1', {'packages': ['geochart']});
@@ -161,20 +162,16 @@
             <div>
 
               <ul style="margin-bottom: 60px;" class="additional-links">
-                <li><a href="#/pages/how_to_use_the_interactive_map">How To Use Interactive Map</a></li>
-                 <li><a href="pdf/forms/GenInfoHdbk WIN &amp; SP 09.pdf" target="_blank">Student Handbook</a></span>
-                           <li><a href="http://www.albany.edu/intled/saebios.shtml">About Us</a></span></li>
-                           <li><a href="http://www.albany.edu/international">UAlbany International Education</a></span></li>
-                           <li><a href="http://www.albany.edu/isss">International Student &amp; Scholar Services</a></span></li>
-                           <li><a href="http://www.albany.edu/ielp">Intensive English Language Program</a></span></li>
-                          <li>Need data about Study Abroad at UAlbany?<br></li>
-                          <li><a href="pdf/reports/Annual Study Abroad Report 2011-2012 with summary.pdf" target="_blank">Study Abroad Annual Report 2011-12</a><br></li>
-                          <li><a href="pdf/reports/Annual Study Abroad Report 2012-2013 with summary.pdf" target="_blank">Study Abroad Annual Report 2012-13</a></span></li> 
+                <li ng-repeat="r in resources">
+                  <a ng-href="{{r.url}}">
+                    {{r.name}}
+                  </a>
+                </li>
               </ul>
             
             </div>          
             </div>
-            <div class="box">
+            <!-- <div class="box">
               <h2>
                 FEATURED VIDEOS
               </h2>
@@ -214,7 +211,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="box">
               <h2>
                 PHOTOS of the DAY

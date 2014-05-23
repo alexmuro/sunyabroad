@@ -103,7 +103,7 @@
                         <a href="#/images/featured"><i class="fa fa-camera"></i> Featured Photos</a>
                     </li>
                     <li>
-                        <a href="#/video"><i class="fa fa-video-camera"></i> Featured Video</a>
+                        <a href="#/resources"><i class="fa fa-edit"></i> Resources</a>
                     </li>
                    
                     

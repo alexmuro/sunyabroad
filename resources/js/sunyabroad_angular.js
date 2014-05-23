@@ -106,7 +106,7 @@ app.filter('reverse', function() {
       }
       return function(items) {
          return toArray(items).slice().reverse();
-      };behaviorController
+      };
    });
 var SAControllers = angular.module('SAControllers', []);
 SAControllers.controller('behaviorController',['$scope','$route',
@@ -115,6 +115,7 @@ SAControllers.controller('behaviorController',['$scope','$route',
 		$scope.$on('$routeChangeSuccess', function (ev, current, prev) {
 		   $scope.mainPage = $route.current.loadedTemplateUrl == "partials/main.php";
 		});
+		$scope.resources = r.resources;
 		
 	}
 ]);
@@ -169,8 +170,8 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce','postsFb'
 		// Menu Item Shite
 		//------------------------------------------------------------------
 		$scope.currentMenu = '';
-		$scope.menuItems = m.menuItems;
-		$scope.submenuItems = m.submenuItems;
+		$scope.menuItems = m.menu;
+		$scope.submenuItems = m.subMenu;
 		
 
 		var keys = [];
