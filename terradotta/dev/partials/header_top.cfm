@@ -1,4 +1,3 @@
-
         <div class="holder">
           <div class="top-section">
             
@@ -46,7 +45,9 @@
                     <input type="hidden" name="cof" value="FORID:11">
                     <input type="hidden" name="ie" value="UTF-8">
                     <input type="text" name="q" size="20" value="Search">
-                    <input src="/layout/v12/accounts/F55DDA42C9E95225F4CB887C90D31683/themes/albany/resources/img/btnSearch.gif" name="sa" type="image" value="Search" class="searchButton2">
+                    <cfoutput>
+                    <input src="#LAYOUT_VARS.SPUBHOSTRELATIVEROOT#accounts/#sa_instance#/themes/albany/resources/img/btnSearch.gif" name="sa" type="image" value="Search" class="searchButton2">
+                    </cfoutput>
                     <input name="siteurl" type="hidden" value="www.albany.edu/">
                     <input name="ref" type="hidden" value="">
                     <input name="ss" type="hidden" value="">
@@ -98,41 +99,14 @@
               <ul id="hpbanners_list" style="width: 5778px;">
                 
                 <li style="display:block;">
-                  <img src="/layout/v12/accounts/F55DDA42C9E95225F4CB887C90D31683/themes/albany/resources/img/chile_header.jpg" alt="UAlbany Students">
-                </li>
-                <li style="display:block;">
-                  <img src="/layout/v12/accounts/F55DDA42C9E95225F4CB887C90D31683/themes/albany/resources/img/homepage_banner-alumni-october-2013.jpg" alt="Graduates">
+                  <cfoutput>
+                  <img src="#LAYOUT_VARS.SPUBHOSTRELATIVEROOT#accounts/#sa_instance#/themes/albany/resources/img/chile_header.jpg" alt="UAlbany Students">
+                  </cfoutput>
                 </li>
                 
-                <li style="display:block;">
-                  <img src="/layout/v12/accounts/F55DDA42C9E95225F4CB887C90D31683/themes/albany/resources/img/homepage_banner_science_hub_biology.jpg" alt="A hub for new ideas">
-                </li>
-                <li style="display:block;">
-                  <img src="/layout/v12/accounts/F55DDA42C9E95225F4CB887C90D31683/themes/albany/resources/img/homepage_banner_graduate.jpg" alt="Graduate">
-                </li>
-                <li style="display:block;">
-                  <img src="/layout/v12/accounts/F55DDA42C9E95225F4CB887C90D31683/themes/albany/resources/img/homepage_banner_value_minerva.jpg" alt="Excellence at a great value">
-                </li>
-                <li style="display:block;">
-                  <img src="/layout/v12/accounts/F55DDA42C9E95225F4CB887C90D31683/themes/albany/resources/img/homepage_banner_global_students.jpg" alt="Global Perspective">
-                </li>
-              
+              </ul>
               <!-- Homepage homepage_banner_list Ends -->
               
-              
-              <div class="pagination-block">
-                
-                <a href="http://www.albany.edu/#" class="prev">
-                  previous
-                </a>
-                <div class="pagination">   
-                      
-              </div>
-              <a href="http://www.albany.edu/#" class="next">
-                next
-              </a>
-              
-            </div>
           </div>
         </div>
       </div>

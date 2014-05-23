@@ -1,8 +1,10 @@
 // page init
 $(function(){
-	initBlocksHeight();
-	initInputs();
-	initCarousel();
+	// initBlocksHeight();
+	// initInputs();
+	// initCarousel();
+	$('.link-selected').parent().attr('style','background-image:none;background:#fff')
+	$('')
 });
 
 // markup layout fix
