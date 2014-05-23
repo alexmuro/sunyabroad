@@ -7,6 +7,7 @@
     <meta name="keywords" content="study abroad, international, inexpensive, travel, University at Albany, Africa, Antarctica, Asia, Central America, Europe, Middle East, North America, South America, West Indies, Albany, Antarctica, Argentina, Belarus, Brazil, Cambodia, Canada, Chile, China, Costa, Rica, Dominican, Republic, Denmark, Ethiopia, Finland, France, Germany, India, Ireland, Israel, Italy, Japan, Korea, Mexico, Namibia, Netherlands, Norway, Puerto, Rico, Russia, Singapore, South, Africa, Spain, Sweden, Taiwan, Tanzania, Thailand, Trinidad and Tobago, United Arab Emirates, United Kingdom, England, Scotland, Abo, Arnhem, Bangalore, Beer Sheva, Beijing, Braunschweig, Buenos Aires, Campinas, Cape Town, Chengdu, Chicoutimi, Chuncheon, Copenhagen, Dubai, Dublin, Durban, East Sussex, Florence, Galway, Glasgow, Gothenburg, Grenoble, Guadalajara, Gyeongsan, Haifa, Hirakata, Osaka, Hong Kong, Jerusalem, Kingston on Hull, London, Madrid, Milan, Montpellier, Montreal, Moscow, Nanjing, Nijmegen, Nottingham, Oulu, Pune, Quebec City, Queretaro, San Jose, San Juan, Santiago, Santo Domingo, Seoul, Shanghai, Singapore, St. Augustine, Swansea, Wales, Taipei City, Tel Aviv, Tilburg, Tokyo, Valencia, Wuerzburg">
     <title>University at Albany - SUNY - Home Page</title>
     
+	<link media="all" rel="stylesheet" type="text/css" href="resources/css/bootstrap.css">
     <link media="all" rel="stylesheet" type="text/css" href="resources/css/all.css">
     
     <script src="resources/js/jquery-latest.min.js"></script>
@@ -15,6 +16,7 @@
     <script type="text/javascript" src="resources/js/content.js"></script>
     <script type="text/javascript" src="resources/js/menu.js"></script>
     <script type="text/javascript" src="resources/js/resources.js"></script>
+	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
     <script type='text/javascript' src='http://www.google.com/jsapi'></script>
     <script>
       google.load('visualization', '1', {'packages': ['geochart']});
@@ -27,7 +29,9 @@
     <script src='https://cdn.firebase.com/v0/firebase.js'></script>
     <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
     <script src='resources/js/sunyabroad_angular.js'></script>  
-
+	<script>
+		$('#myModal').modal() 
+	</script>
     <!-- Begin Mobile Detection Scripts -->
   </head>
 
@@ -78,7 +82,15 @@
                 <option value="142">Asia</option>
                 <option value="150">Europe</option>
                 <option value="145">Middle East</option>
-              </select></div> 
+              </select>
+			  <!-- Button trigger modal -->
+				<button  data-toggle="modal" data-target="#myModal">
+				  Expand Map
+				</button>
+
+				
+			  
+			  </div> 
               <div id='visualization'></div>
               <div id='imapmessage'>Click each location for more information</div>
           </div>
@@ -220,22 +232,6 @@
             </div>
             
             
-            <script>
-              var ul = document.getElementById("videoList");
-              var liNodes = [];
-              
-              for (var i = 0; i < ul.childNodes.length; i++) {
-                if (ul.childNodes[i].nodeName == "LI") {
-                  liNodes.push(ul.childNodes[i]);
-                }
-              }
-              
-              
-              var count = liNodes.length;
-              document.getElementById("numVideos").innerHTML=count;
-              
-              
-            </script>
             
            
           </div>
@@ -281,6 +277,8 @@
   </div>
   
   <!-- END OF SmartSource Data Collector TAG -->
+  <?php include "partials/mapmodal.html"; ?>
   </body>
+  
 </html>
 

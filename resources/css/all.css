@@ -1012,3 +1012,6 @@ text-align: left;
 	background: #7e3f99;
 	color:#fff;
 }
+.modal-dialog{
+width:95%;
+}
