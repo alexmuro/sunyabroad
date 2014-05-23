@@ -102,6 +102,7 @@ input, textarea, select {
 .side_sub li a{
 	background-color:#fff;
 	color:#001058;
+	background-image:none;
 }
 .side_sub li a:hover{
 	background-color:#f0f0f0;

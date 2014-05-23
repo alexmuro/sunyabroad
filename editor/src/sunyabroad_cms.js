@@ -147,17 +147,18 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 
 	}	
 ])
-.controller('MenuController',['$scope', '$firebase','$routeParams',
-	function($scope, $firebase,$routeParams) {
+.controller('MenuController',['$scope', '$firebase','$routeParams','$http',
+	function($scope, $firebase,$routeParams,$http) {
+		$scope.Message = "";
 		$('#newMenuItem').hide();
 		$scope.menuItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/menu"));
 		$scope.menuItems.$on('loaded',function(){
 			$scope.submenuItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/submenu"));
 			$scope.submenuItems.$on('loaded',function(){
 				var keys = $scope.menuItems.$getIndex();
-				keys.forEach(function(key, i) {
-					console.log($scope.menuItems[key]);
-				});
+				// keys.forEach(function(key, i) {
+				// 	console.log($scope.menuItems[key]);
+				// });
 				$scope.currentOrder = $scope.getCurrentIndex();
 				$scope.addPage = function(e) {
 				if (e.keyCode != 13) return;
@@ -175,6 +176,20 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 			$scope.submenuItems.$save(key);
 		};
 
+		$scope.publishMenu = function(){
+			$http.post('bridge/publishMenu.php',{menu:JSON.stringify($scope.menuItems),subMenu:JSON.stringify($scope.submenuItems)})
+			.success(function(data) {
+		      console.log('success',data);
+		      $scope.Message = "Menu Changes Published";
+		      setTimeout(function(){
+		      	$scope.Message = "";
+		      },3000);
+		    })
+		    .error(function(data) {
+		      console.log('failure',data);
+		    });
+			//console.log(JSON.stringify($scope.menuItems));
+		};
 		$scope.getCurrentIndex = function(){
 			currentOrder = 0;
 			var keys = $scope.menuItems.$getIndex();

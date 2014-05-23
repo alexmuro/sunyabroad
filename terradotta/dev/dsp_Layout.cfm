@@ -1,8 +1,6 @@
 
-<script src="resources/js/jquery-latest.min.js"></script>
-<script type="text/javascript" src="../resources/js/jquery.main.js"></script>
-<script type="text/javascript" src="resources/js/accordian.js"></script>
-<script type="text/javascript" src="resources/js/content.js"></script>
+<cfoutput>
+<script type="text/javascript" src="#LAYOUT_VARS.SPUBHOSTRELATIVEROOT#accounts/#sa_instance#/themes/albany/resources/js/jquery.main.js"></script>
 <cfhtmlhead text='
 	<script type="text/javascript" language="javascript" src="#LAYOUT_VARS.SPUBHOSTRELATIVEROOT#_themes/links.js"></script>
 	<script type="text/javascript" language="javascript">
@@ -16,7 +14,7 @@
 	//-->
 	</script>
 ' />
-<cfoutput>
+<div id="page" style="width:100%;overflow:hidden">
 <div id="mainContainer">
 	<div id="mainContainerInside">
 		<div id="headerContainer">
@@ -43,64 +41,22 @@
 			<div style="clear:both;">
 			</div>
 		</div>
-	<div id="footer">
+	 <div id="footer">
+      <img src="http://vis.availabs.org/sunyabroad/resources/img/study_abroad_logo.jpg" style="width:250px;float:right" > 
       <address>
         <strong>
-          University at Albany
-        </strong>
-        , State University of New York · 1400 Washington Ave., · Albany, NY 12222 · Phone (518) 442-3300
+          University at Albany Office of Internation Education,<br> Study Abroad &amp; Exchanges
+        </strong><br>
+        Science Library G40 · 1400 Washington Ave., · Albany, NY 12222 · Phone (518) 591-8170
+        <br><a href="mailto:studyabroad@albany.edu">studyabroad@albany.edu</a>
       </address>
-      <ul class="additional-menu">
-        <li>
-          <a href="http://www.albany.edu/contact.shtml">
-            Contact Us
-          </a>
-        </li>
-        <li>
-          <a href="http://www.albany.edu/main/employment.shtml">
-            Jobs
-          </a>
-        </li>
-        <li>
-          <a href="http://www.albany.edu/emergency/index.php">
-            SUNY NY-Alert
-          </a>
-        </li>
-        <li>
-          <a href="http://police.albany.edu/ASR.shtml">
-            Annual Security and Fire Safety Report
-          </a>
-        </li>
-        <li>
-          <a href="http://wiki.albany.edu/x/IR7-AQ">
-            Internet Privacy Policy
-          </a>
-        </li>
-        <li>
-          <a href="http://www.albany.edu/emergency/index.php">
-            UAlbany Alert
-          </a>
-        </li>
-        <li>
-          <a href="http://www.albany.edu/veterans/">
-            Veterans Affairs
-          </a>
-        </li>
-        <li>
-          <a href="https://wiki.albany.edu/display/middlestates/Home">
-            Middle States Self-Study
-          </a>
-        </li>
-      </ul>
-      <a href="http://www.albany.edu/gogreen/index.shtml?WT.source=home" class="green-label">
-        UAlbany is Green!
-      </a>
+
       
       <span>
         ©&nbsp;2014 University at Albany
       </span>
       
     </div>
-	</div>
+</div>
 </div>
 </cfoutput>

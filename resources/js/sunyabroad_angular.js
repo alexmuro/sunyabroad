@@ -169,9 +169,8 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce','postsFb'
 		// Menu Item Shite
 		//------------------------------------------------------------------
 		$scope.currentMenu = '';
-		console.log(content);
-		$scope.menuItems = content.menuItems;
-		$scope.submenuItems = content.submenuItems;
+		$scope.menuItems = m.menuItems;
+		$scope.submenuItems = m.submenuItems;
 		
 
 		var keys = [];

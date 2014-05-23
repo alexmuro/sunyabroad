@@ -13,6 +13,7 @@
     <script type="text/javascript" src="resources/js/jquery.main.js"></script>
     <script type="text/javascript" src="resources/js/accordian.js"></script>
     <script type="text/javascript" src="resources/js/content.js"></script>
+    <script type="text/javascript" src="resources/js/menu.js"></script>
     <script type='text/javascript' src='http://www.google.com/jsapi'></script>
     <script>
       google.load('visualization', '1', {'packages': ['geochart']});
@@ -40,6 +41,18 @@
     <div id="main">
       <div id="twocolumns">
         <div id="content" style="padding-bottom:100px;">
+        <?php
+          if($_SERVER['REQUEST_URI'] == '/sunyabroad/custom'){
+            include 'partials/custom.html';
+          }
+          else if($_SERVER['REQUEST_URI'] == '/sunyabroad/custom3'){
+            include 'partials/custom.html';
+          }
+          else if($_SERVER['REQUEST_URI'] == '/sunyabroad/custom4'){
+            include 'partials/custom.html';
+          }
+          else{
+        ?>
           <span id="mapstuff" ng-show="mainPage">
           <h2>
             Interactive Program Map
@@ -70,6 +83,7 @@
           </div>
           </span>
           <div ng-view ng-cloak class="ng-cloak"></div>
+        <?php } ?>
         </div>
           <!-- RIGHT COLUMN BEGINS -->
           
