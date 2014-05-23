@@ -979,6 +979,7 @@ background: lightblue;
 	color: #FF6600;
 	font-weight: bold;
 	width: 530px;
+	overflow:auto;
 }
 
 #visualization{
@@ -1005,4 +1006,9 @@ text-align: left;
 }
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
+}
+#programterm,#regionmap{
+	padding:2px;
+	background: #7e3f99;
+	color:#fff;
 }

@@ -51,6 +51,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/editor.html',
         controller: 'EditorController'
       })
+      .when('/resources', {
+        templateUrl: 'partials/resources.html',
+        controller: 'ResourcesController'
+      })
       .otherwise({
         redirectTo: '/pages'
       });
@@ -147,6 +151,109 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 
 	}	
 ])
+.controller('ResourcesController',['$scope', '$firebase','$routeParams','$http',
+	function($scope, $firebase,$routeParams,$http) {
+		$scope.Message = "";
+		$('#newMenuItem').hide();
+		$scope.menuItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/resources"));
+		$scope.menuItems.$on('loaded',function(){
+
+				$scope.currentOrder = $scope.getCurrentIndex();
+				$scope.addPage = function(e) {
+				if (e.keyCode != 13) return;
+					$scope.menuItems.$add({name: $scope.menuItemName,createdAt:new Date(),editedAt:new Date(),style:'',url:'',$priority:$scope.getCurrentIndex()+1});
+					$scope.menuItemName= "";
+					$scope.currentOrder = $scope.getCurrentIndex()+1;
+				};
+		});
+
+		$scope.editItem = function(e,key){
+			$scope.menuItems.$save(key);
+		};
+		
+		$scope.publishMenu = function(){
+			console.log(JSON.stringify($scope.menuItems));
+			$http.post('bridge/publishResources.php',{menu:JSON.stringify($scope.menuItems)})
+			.success(function(data) {
+		      $scope.Message = "Resource Changes Published";
+		      setTimeout(function(){
+		      	$scope.Message = "";
+		      },1000);
+		    })
+		    .error(function(data) {
+		      console.log('failure',data);
+		    });
+			//console.log(JSON.stringify($scope.menuItems));
+		};
+		$scope.getCurrentIndex = function(){
+			currentOrder = 0;
+			var keys = $scope.menuItems.$getIndex();
+			keys.forEach(function(key, i) {
+				if(typeof $scope.menuItems[key] != 'undefined'){
+					if($scope.menuItems[key].$priority >= currentOrder){
+						currentOrder = $scope.menuItems[key].$priority;
+					}
+				}
+			});
+			return currentOrder;
+		};
+		$scope.getKeyIndex = function(input_id){
+			currentOrder = 0;
+			
+			var keys = $scope.submenuItems.$getIndex();
+			keys.forEach(function(key, i) {
+				if(typeof $scope.submenuItems[key] != 'undefined'){
+					if($scope.submenuItems[key]['parent'] == input_id && $scope.submenuItems[key].$priority >= currentOrder){
+						currentOrder = $scope.submenuItems[key].$priority;
+					}
+				}
+			});
+			return currentOrder;
+		};
+
+		$scope.moveUp = function(key){
+
+				var current_val = $scope.menuItems[key].$priority-1;
+				keys = $scope.menuItems.$getIndex();
+				keys.forEach(function(dex, i) {
+					if($scope.menuItems[dex].$priority == current_val){
+						$scope.menuItems[dex].$priority++;
+						$scope.menuItems[key].$priority--;
+					}
+				});
+			$scope.menuItems.$save();
+		};
+
+		$scope.moveDown = function (key){
+				
+				var current_val = $scope.menuItems[key].$priority+1;
+				keys = $scope.menuItems.$getIndex();
+				keys.forEach(function(dex, i) {
+					if($scope.menuItems[dex]['parent'] == in_parent &&$scope.menuItems[dex].$priority == current_val){
+						$scope.menuItems[dex].$priority--;
+						$scope.menuItems[key].$priority++;
+					}
+				});
+			$scope.menuItems.$save();
+		};
+		
+		$scope.deleteItem = function(key){
+			
+			var current_val = $scope.menuItems[key].$priority;
+			keys = $scope.menuItems.$getIndex();
+			keys.forEach(function(dex, i) {
+				if($scope.menuItems[dex].$priority >= current_val){
+					$scope.menuItems[dex].$priority--;
+				}
+			});
+			$scope.currentOrder--;
+
+			$scope.menuItems.$save().then(function(){
+				$scope.menuItems.$remove(key);
+			});
+		};
+	}
+])
 .controller('MenuController',['$scope', '$firebase','$routeParams','$http',
 	function($scope, $firebase,$routeParams,$http) {
 		$scope.Message = "";
@@ -183,7 +290,7 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 		      $scope.Message = "Menu Changes Published";
 		      setTimeout(function(){
 		      	$scope.Message = "";
-		      },3000);
+		      },1000);
 		    })
 		    .error(function(data) {
 		      console.log('failure',data);
