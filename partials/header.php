@@ -53,7 +53,6 @@
                     <input name="ref" type="hidden" value="">
                     <input name="ss" type="hidden" value="">
                   </form>
-                  <script type="text/javascript" src=c"resources/img/brand">
                   </script>
                   
                 </div>
@@ -99,8 +98,8 @@
               
               <ul id="hpbanners_list" ng-controller="HeaderController">
                 
-                <li style="display:block;" ng-repeat='item in headerItems |  orderByPriority'>
-                  <img ng-src="{{item.img}}">
+                <li style="display:block;" ng-repeat='item in headerItems'>
+                  <img ng-src="{{item.img}}"  >
                 </li>
                
               </ul>

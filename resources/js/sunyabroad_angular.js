@@ -12,12 +12,7 @@ app.config(['$routeProvider',
     $routeProvider.
       when('/', {
         templateUrl: 'partials/main.php',
-        controller: 'MainController',
-        resolve: {
-		    loadPosts:  function(postsFb) {
-		      return postsFb.promiseToHavePosts();
-		    }  
-		},
+        controller: 'MainController'
       }).
       when('/pages/:id', {
         templateUrl: 'partials/page.html',
@@ -27,41 +22,6 @@ app.config(['$routeProvider',
         redirectTo: '/'
       });
   }]);
-app.factory('postsFb', function($firebase, $q) {
-  return {
-    posts: null,
-    menuItems: null,
-    promiseToHavePosts: function() {
-      var deferred = $q.defer();
-
-      if (this.posts === null) {
-        this.posts = $firebase(new Firebase("https://sunyabroad.firebaseio.com/posts"));
-        this.posts.$on('loaded', function(loadedData) {
-          deferred.resolve();
-        });
-      }
-      else {
-        deferred.resolve();
-      }
-
-      return deferred.promise;
-    },
-   	promiseToHaveMenuItems : function(){
-   	  var deferred = $q.defer();
-
-      if (this.posts === null) {
-        this.posts = $firebase(new Firebase("https://sunyabroad.firebaseio.com/menu"))
-        this.posts.$on('loaded', function(loadedData) {
-          deferred.resolve();
-        });
-      }
-      else {
-        deferred.resolve();
-      }
-      return deferred.promise
-   	}
-  };
-});
 app.animation('.my-show-hide-animation', function() {
   return {
     beforeAddClass : function(element, className, done) {
@@ -119,25 +79,34 @@ SAControllers.controller('behaviorController',['$scope','$route',
 		
 	}
 ]);
-SAControllers.controller('MainController',['$scope','$firebase','$sce','postsFb',
-	function($scope,$firebase,$sce,postsFb) {
-		
+SAControllers.controller('MainController',['$scope','$firebase','$sce',
+	function($scope,$firebase,$sce) {
+		console.log(content);
 		$scope.currentPage = 0;
-	    $scope.pageSize = 3;
-	    $scope.data = [];
-	    $scope.keys = [];
+	    $scope.pageSize = 2;
+		$scope.posts = content.posts;
+		$scope.keys = [];
+		for(var key in $scope.posts){
+			$scope.posts[key].img='resources/img/shim.png'
+			$scope.keys.push(key);
+			$scope.posts[key].trustedHTML = $sce.trustAsHtml($scope.posts[key].body.replace(/<\/?span[^>]*>/g,""));
+		}
+		console.log($scope.keys);
+		$scope.postup = $firebase(new Firebase("https://sunyabroad.firebaseio.com/posts"));
+		
 	    $scope.numberOfPages=function(){
 	        return Math.ceil($scope.keys.length/$scope.pageSize);                
 	    }
-
-		$scope.trustedHTML = {};
-		$scope.posts = postsFb.posts;
-		$scope.keys = $scope.posts.$getIndex();
-		$scope.keys.forEach(function(key, i) {
-			$scope.posts[key].trustedHTML =  $sce.trustAsHtml($scope.posts[key].body.replace(/<\/?span[^>]*>/g,""));
-		});
-			
-		
+	   
+       $scope.postup.$on('loaded', function() {
+          	$scope.trustedHTML = {};
+			$scope.keys = $scope.postup.$getIndex();
+			$scope.posts= [];
+			$scope.keys.forEach(function(key, i) {
+				$scope.posts[key]=$scope.postup[key];
+				$scope.posts[key].trustedHTML =  $sce.trustAsHtml($scope.postup[key].body.replace(/<\/?span[^>]*>/g,""));
+			});
+        });	
 		
 	}
 ])
@@ -173,6 +142,7 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce','postsFb'
 		$scope.menuItems = m.menu;
 		$scope.submenuItems = m.subMenu;
 		
+		console.log('a',m);
 
 		var keys = [];
 		for(var k in $scope.menuItems) keys.push(k);
@@ -181,6 +151,7 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce','postsFb'
 		$scope.setMenu = function(key){
 			$scope.currentMenu = key;
 		};
+
 		$scope.showMenu = function(key){
 			if($scope.currentMenu == key){
 				return true;
@@ -190,13 +161,11 @@ SAControllers.controller('MainController',['$scope','$firebase','$sce','postsFb'
 
 	}
 ])
-.controller('HeaderController',['$scope', '$firebase','$routeParams',
-	function($scope, $firebase,$routeParams) {
-		$scope.headerItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/headerImage"));
-		$scope.headerItems.$on('loaded',function(){
-			initCarousel();
-		});
+.controller('HeaderController',['$scope',
+	function($scope) {
 
+		$scope.headerItems = headerList;
+	
 	}
 ])
 .controller('PhotosController',['$scope', '$firebase','$routeParams',

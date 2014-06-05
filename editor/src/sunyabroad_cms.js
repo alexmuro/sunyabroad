@@ -62,7 +62,7 @@ app.config(['$routeProvider',
 
 
 var CMSControllers = angular.module('CMSControllers', []);
-CMSControllers.controller('PagesController',['$scope', '$firebase',
+CMSControllers.controller('PagesController',['$scope', '$firebase','$http',
 	function($scope, $firebase) {
 		$('#newPage').hide();
 		$scope.pages = $firebase(new Firebase("https://sunyabroad.firebaseio.com/pages"));
@@ -73,14 +73,28 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 		};
 	}
 ])
-.controller('PostsController',['$scope', '$firebase',
-	function($scope, $firebase) {
+.controller('PostsController',['$scope', '$firebase','$http',
+	function($scope, $firebase,$http) {
 		$('#newPost').hide();
 		$scope.posts = $firebase(new Firebase("https://sunyabroad.firebaseio.com/posts"));
 		$scope.addPage = function(e) {
 		if (e.keyCode != 13) return;
 			$scope.posts.$add({title: $scope.pageTitle,createdAt:new Date(),editedAt:new Date(),url:encodeURIComponent($scope.pageTitle.replaceAll(" ","_").toLowerCase().replaceAll("?","").replaceAll("&","and"))});
 			$scope.pageTitle= "";
+		};
+		$scope.publishContent = function(){
+			
+			$http.post('bridge/publishContent.php',{posts:JSON.stringify($scope.posts)})
+			.success(function(data) {
+		      $scope.Message = "Resource Changes Published";
+		      setTimeout(function(){
+		      	$scope.Message = "";
+		      },1000);
+		    })
+		    .error(function(data) {
+		      console.log('failure',data);
+		    });
+			//console.log(JSON.stringify($scope.menuItems));
 		};
 	}
 ])
@@ -263,9 +277,11 @@ CMSControllers.controller('PagesController',['$scope', '$firebase',
 			$scope.submenuItems = $firebase(new Firebase("https://sunyabroad.firebaseio.com/submenu"));
 			$scope.submenuItems.$on('loaded',function(){
 				var keys = $scope.menuItems.$getIndex();
-				// keys.forEach(function(key, i) {
-				// 	console.log($scope.menuItems[key]);
-				// });
+				console.log($scope.submenuItems);
+			
+				keys.forEach(function(key, i) {
+					console.log($scope.menuItems[key]);
+				});
 				$scope.currentOrder = $scope.getCurrentIndex();
 				$scope.addPage = function(e) {
 				if (e.keyCode != 13) return;

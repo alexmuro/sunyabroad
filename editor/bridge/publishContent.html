@@ -1,0 +1,11 @@
+<?php
+	$postdata = file_get_contents("php://input");
+	$request = json_decode($postdata);
+	if(!empty($request->posts)){
+		$data = "var c={content:".$request->posts."}";
+		if(file_put_contents('../../resources/js/content.js', $data)){
+			echo "{\"responseText\":\"Sucess\"}";
+			die;	
+		}
+	}
+	echo "{\"responseText\":\"Failure\"}";

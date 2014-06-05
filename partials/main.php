@@ -4,7 +4,7 @@
 </h2>
 <!-- news block -->
 <ul class="news-block">
-  <li ng-repeat="key in keys | orderByPriority | reverse | startFrom:currentPage*pageSize | limitTo:pageSize ">
+  <li ng-repeat="key in keys | reverse | startFrom:currentPage*pageSize | limitTo:pageSize ">
     <div>
       <h3><a href="{{posts[key].url}}+'"><p>{{posts[key].title}}</p></a></h3>
       <strong class="subject" style="text-transform:uppercase;">{{posts[key].subtitle}}</strong>

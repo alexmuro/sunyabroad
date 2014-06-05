@@ -15,6 +15,7 @@
     <script type="text/javascript" src="resources/js/accordian.js"></script>
     <script type="text/javascript" src="resources/js/content.js"></script>
     <script type="text/javascript" src="resources/js/menu.js"></script>
+    <script type="text/javascript" src="resources/js/headers.js"></script>
     <script type="text/javascript" src="resources/js/resources.js"></script>
 	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
     <script type='text/javascript' src='http://www.google.com/jsapi'></script>
@@ -135,10 +136,9 @@
           <!-- DIV alert_box ENDS -->
           
           
-          
-          
           <!-- aside -->
           <div class="aside">
+            <span class='custom_social'>@UAlbanyAbroad</span>
             <div id="social-media-icons" style="margin: 0px 0px 3px 0px;">
               
               <a href="http://www.albany.edu/main/facebook.shtml">
@@ -169,7 +169,7 @@
             <!-- DIV social-media-icons ENDS -->
 
             <div id="research_and_business" class="box">
-            <h2>Resources</h2>
+            <h2>RESOURCES</h2>
             
             <div>
 
@@ -258,7 +258,7 @@
     </div>
     <!-- footer -->
     <div id="footer">
-      <img src="resources/img/study_abroad_logo.jpg" style="width:250px;float:right" > 
+      <img src="resources/img/sa_logo_2.png" style="width:250px;float:right" > 
       <address>
         <strong>
           University at Albany Office of Internation Education, Study Abroad &amp; Exchanges
